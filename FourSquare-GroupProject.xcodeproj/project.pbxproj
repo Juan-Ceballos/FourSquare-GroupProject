@@ -16,7 +16,6 @@
 		3EE2A253240075840064828A /* AddCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A252240075840064828A /* AddCollectionController.swift */; };
 		3EE2A25A2400795C0064828A /* CollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A2592400795C0064828A /* CollectionController.swift */; };
 		3EE2A25C240079B00064828A /* ACollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A25B240079B00064828A /* ACollectionController.swift */; };
-		3EE2A25E240079C50064828A /* AddCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A25D240079C50064828A /* AddCollectionController.swift */; };
 		3EE2A26024007AAE0064828A /* RestaurantsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A25F24007AAD0064828A /* RestaurantsDetailController.swift */; };
 		3EE2A26224007AFB0064828A /* ResultsOfSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A26124007AFB0064828A /* ResultsOfSearchController.swift */; };
 /* End PBXBuildFile section */
@@ -44,7 +43,6 @@
 		3EE2A252240075840064828A /* AddCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionController.swift; sourceTree = "<group>"; };
 		3EE2A2592400795C0064828A /* CollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionController.swift; sourceTree = "<group>"; };
 		3EE2A25B240079B00064828A /* ACollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACollectionController.swift; sourceTree = "<group>"; };
-		3EE2A25D240079C50064828A /* AddCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionController.swift; sourceTree = "<group>"; };
 		3EE2A25F24007AAD0064828A /* RestaurantsDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsDetailController.swift; sourceTree = "<group>"; };
 		3EE2A26124007AFB0064828A /* ResultsOfSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsOfSearchController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,7 +139,6 @@
 			children = (
 				3EE2A2592400795C0064828A /* CollectionController.swift */,
 				3EE2A25B240079B00064828A /* ACollectionController.swift */,
-				3EE2A25D240079C50064828A /* AddCollectionController.swift */,
 			);
 			path = AlbumsCollectionControllers;
 			sourceTree = "<group>";
@@ -260,7 +257,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EE2A253240075840064828A /* AddCollectionController.swift in Sources */,
-				3EE2A25E240079C50064828A /* AddCollectionController.swift in Sources */,
 				3EE2A25A2400795C0064828A /* CollectionController.swift in Sources */,
 				3EE2A26224007AFB0064828A /* ResultsOfSearchController.swift in Sources */,
 				3EE2A2272400744D0064828A /* AppDelegate.swift in Sources */,
