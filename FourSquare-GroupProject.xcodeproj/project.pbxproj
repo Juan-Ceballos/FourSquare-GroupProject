@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3EE1F81224008D1C004DF2C9 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1F81124008D1C004DF2C9 /* CollectionView.swift */; };
-		3EE1F81424008D31004DF2C9 /* ACollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1F81324008D31004DF2C9 /* ACollectionView.swift */; };
-		3EE1F81624008D62004DF2C9 /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1F81524008D62004DF2C9 /* RestaurantDetailView.swift */; };
-		3EE1F81824008D72004DF2C9 /* AddCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1F81724008D72004DF2C9 /* AddCollectionView.swift */; };
-		3EE1F81A24008D8E004DF2C9 /* ResultsOfSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1F81924008D8E004DF2C9 /* ResultsOfSearchView.swift */; };
+		3EA4B2B5240096D9003C2EC4 /* RestaurantsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2B4240096D9003C2EC4 /* RestaurantsDetailView.swift */; };
+		3EA4B2B7240096EC003C2EC4 /* AddCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2B6240096EC003C2EC4 /* AddCollectionView.swift */; };
+		3EA4B2B924009701003C2EC4 /* ResultsOfSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2B824009701003C2EC4 /* ResultsOfSearchView.swift */; };
+		3EA4B2BB24009729003C2EC4 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2BA24009729003C2EC4 /* CollectionView.swift */; };
+		3EA4B2BD24009737003C2EC4 /* ACollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2BC24009737003C2EC4 /* ACollectionView.swift */; };
+		3EA4B2C3240097DA003C2EC4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2C2240097DA003C2EC4 /* TabBarController.swift */; };
+		3EA4B2C524009B77003C2EC4 /* FourSquareAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2C424009B77003C2EC4 /* FourSquareAPIClient.swift */; };
+		3EA4B2C724009B89003C2EC4 /* PhotoAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2C624009B89003C2EC4 /* PhotoAPIClient.swift */; };
+		3EA4B2C924009E2C003C2EC4 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2C824009E2C003C2EC4 /* MapController.swift */; };
+		3EA4B2CB24009E73003C2EC4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2CA24009E73003C2EC4 /* MapView.swift */; };
 		3EE2A2272400744D0064828A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A2262400744D0064828A /* AppDelegate.swift */; };
 		3EE2A2292400744D0064828A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A2282400744D0064828A /* SceneDelegate.swift */; };
 		3EE2A2302400744D0064828A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2A22F2400744D0064828A /* Assets.xcassets */; };
@@ -36,11 +41,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3EE1F81124008D1C004DF2C9 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionView.swift; path = ../../../../../Documents/CollectionView.swift; sourceTree = "<group>"; };
-		3EE1F81324008D31004DF2C9 /* ACollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ACollectionView.swift; path = ../../../../../Documents/ACollectionView.swift; sourceTree = "<group>"; };
-		3EE1F81524008D62004DF2C9 /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RestaurantDetailView.swift; path = ../../../../../Documents/RestaurantDetailView.swift; sourceTree = "<group>"; };
-		3EE1F81724008D72004DF2C9 /* AddCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddCollectionView.swift; path = ../../../../../Documents/AddCollectionView.swift; sourceTree = "<group>"; };
-		3EE1F81924008D8E004DF2C9 /* ResultsOfSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultsOfSearchView.swift; path = ../../../../../Documents/ResultsOfSearchView.swift; sourceTree = "<group>"; };
+		3EA4B2B4240096D9003C2EC4 /* RestaurantsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsDetailView.swift; sourceTree = "<group>"; };
+		3EA4B2B6240096EC003C2EC4 /* AddCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionView.swift; sourceTree = "<group>"; };
+		3EA4B2B824009701003C2EC4 /* ResultsOfSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsOfSearchView.swift; sourceTree = "<group>"; };
+		3EA4B2BA24009729003C2EC4 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		3EA4B2BC24009737003C2EC4 /* ACollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACollectionView.swift; sourceTree = "<group>"; };
+		3EA4B2C2240097DA003C2EC4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		3EA4B2C424009B77003C2EC4 /* FourSquareAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareAPIClient.swift; sourceTree = "<group>"; };
+		3EA4B2C624009B89003C2EC4 /* PhotoAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAPIClient.swift; sourceTree = "<group>"; };
+		3EA4B2C824009E2C003C2EC4 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		3EA4B2CA24009E73003C2EC4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		3EE2A2232400744C0064828A /* FourSquare-GroupProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FourSquare-GroupProject.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE2A2262400744D0064828A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EE2A2282400744D0064828A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +86,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EA4B2B224009667003C2EC4 /* AlbumsCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				3EA4B2BA24009729003C2EC4 /* CollectionView.swift */,
+				3EA4B2BC24009737003C2EC4 /* ACollectionView.swift */,
+			);
+			path = AlbumsCollectionView;
+			sourceTree = "<group>";
+		};
+		3EA4B2B324009681003C2EC4 /* MapVCView */ = {
+			isa = PBXGroup;
+			children = (
+				3EA4B2CA24009E73003C2EC4 /* MapView.swift */,
+				3EA4B2B824009701003C2EC4 /* ResultsOfSearchView.swift */,
+				3EA4B2B4240096D9003C2EC4 /* RestaurantsDetailView.swift */,
+				3EA4B2B6240096EC003C2EC4 /* AddCollectionView.swift */,
+			);
+			path = MapVCView;
+			sourceTree = "<group>";
+		};
+		3EA4B2C024009773003C2EC4 /* NetworkServices */ = {
+			isa = PBXGroup;
+			children = (
+				3EA4B2C424009B77003C2EC4 /* FourSquareAPIClient.swift */,
+				3EA4B2C624009B89003C2EC4 /* PhotoAPIClient.swift */,
+			);
+			path = NetworkServices;
+			sourceTree = "<group>";
+		};
+		3EA4B2C1240097AA003C2EC4 /* TabController */ = {
+			isa = PBXGroup;
+			children = (
+				3EA4B2C2240097DA003C2EC4 /* TabBarController.swift */,
+			);
+			path = TabController;
+			sourceTree = "<group>";
+		};
 		3EE2A21A2400744C0064828A = {
 			isa = PBXGroup;
 			children = (
@@ -97,8 +144,10 @@
 		3EE2A2252400744C0064828A /* FourSquare-GroupProject */ = {
 			isa = PBXGroup;
 			children = (
-				3EE2A24A240074980064828A /* MapVCViews */,
-				3EE2A26324007C440064828A /* AlbumsViews */,
+				3EA4B2C1240097AA003C2EC4 /* TabController */,
+				3EA4B2C024009773003C2EC4 /* NetworkServices */,
+				3EA4B2B324009681003C2EC4 /* MapVCView */,
+				3EA4B2B224009667003C2EC4 /* AlbumsCollectionView */,
 				3EE2A2492400748C0064828A /* MapViewControllers */,
 				3EE2A24F240075420064828A /* AlbumsCollectionControllers */,
 				3EE2A248240074540064828A /* Supporting Files */,
@@ -130,21 +179,12 @@
 		3EE2A2492400748C0064828A /* MapViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3EA4B2C824009E2C003C2EC4 /* MapController.swift */,
+				3EE2A26124007AFB0064828A /* ResultsOfSearchController.swift */,
 				3EE2A25F24007AAD0064828A /* RestaurantsDetailController.swift */,
 				3EE2A252240075840064828A /* AddCollectionController.swift */,
-				3EE2A26124007AFB0064828A /* ResultsOfSearchController.swift */,
 			);
 			path = MapViewControllers;
-			sourceTree = "<group>";
-		};
-		3EE2A24A240074980064828A /* MapVCViews */ = {
-			isa = PBXGroup;
-			children = (
-				3EE1F81524008D62004DF2C9 /* RestaurantDetailView.swift */,
-				3EE1F81724008D72004DF2C9 /* AddCollectionView.swift */,
-				3EE1F81924008D8E004DF2C9 /* ResultsOfSearchView.swift */,
-			);
-			path = MapVCViews;
 			sourceTree = "<group>";
 		};
 		3EE2A24F240075420064828A /* AlbumsCollectionControllers */ = {
@@ -154,15 +194,6 @@
 				3EE2A25B240079B00064828A /* ACollectionController.swift */,
 			);
 			path = AlbumsCollectionControllers;
-			sourceTree = "<group>";
-		};
-		3EE2A26324007C440064828A /* AlbumsViews */ = {
-			isa = PBXGroup;
-			children = (
-				3EE1F81124008D1C004DF2C9 /* CollectionView.swift */,
-				3EE1F81324008D31004DF2C9 /* ACollectionView.swift */,
-			);
-			path = AlbumsViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,17 +302,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EA4B2C924009E2C003C2EC4 /* MapController.swift in Sources */,
+				3EA4B2B5240096D9003C2EC4 /* RestaurantsDetailView.swift in Sources */,
+				3EA4B2C3240097DA003C2EC4 /* TabBarController.swift in Sources */,
+				3EA4B2C724009B89003C2EC4 /* PhotoAPIClient.swift in Sources */,
+				3EA4B2B7240096EC003C2EC4 /* AddCollectionView.swift in Sources */,
 				3EE2A253240075840064828A /* AddCollectionController.swift in Sources */,
+				3EA4B2C524009B77003C2EC4 /* FourSquareAPIClient.swift in Sources */,
 				3EE2A25A2400795C0064828A /* CollectionController.swift in Sources */,
-				3EE1F81824008D72004DF2C9 /* AddCollectionView.swift in Sources */,
+				3EA4B2BD24009737003C2EC4 /* ACollectionView.swift in Sources */,
+				3EA4B2CB24009E73003C2EC4 /* MapView.swift in Sources */,
 				3EE2A26224007AFB0064828A /* ResultsOfSearchController.swift in Sources */,
 				3EE2A2272400744D0064828A /* AppDelegate.swift in Sources */,
+				3EA4B2B924009701003C2EC4 /* ResultsOfSearchView.swift in Sources */,
 				3EE2A26024007AAE0064828A /* RestaurantsDetailController.swift in Sources */,
 				3EE2A25C240079B00064828A /* ACollectionController.swift in Sources */,
-				3EE1F81624008D62004DF2C9 /* RestaurantDetailView.swift in Sources */,
-				3EE1F81A24008D8E004DF2C9 /* ResultsOfSearchView.swift in Sources */,
-				3EE1F81224008D1C004DF2C9 /* CollectionView.swift in Sources */,
-				3EE1F81424008D31004DF2C9 /* ACollectionView.swift in Sources */,
+				3EA4B2BB24009729003C2EC4 /* CollectionView.swift in Sources */,
 				3EE2A2292400744D0064828A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

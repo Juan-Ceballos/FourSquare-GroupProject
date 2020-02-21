@@ -1,5 +1,5 @@
 //
-//  RestaurantsDetailController.swift
+//  TabBarController.swift
 //  FourSquare-GroupProject
 //
 //  Created by Juan Ceballos on 2/21/20.
@@ -8,14 +8,10 @@
 
 import UIKit
 
-class RestaurantsDetailController: UIViewController {
-
+class TabBarController: UITabBarController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewControllers = [MapController(), CollectionController()]
     }
-    
-
-
-
 }
