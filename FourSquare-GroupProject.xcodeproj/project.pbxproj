@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E5817322400914F0070AE9F /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5817312400914F0070AE9F /* CollectionView.swift */; };
+		3E5817342400916B0070AE9F /* ACollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5817332400916B0070AE9F /* ACollectionView.swift */; };
+		3E581736240091A50070AE9F /* RestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E581735240091A50070AE9F /* RestaurantView.swift */; };
+		3E581738240091B20070AE9F /* AddCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E581737240091B20070AE9F /* AddCollectionView.swift */; };
+		3E58173A240091C60070AE9F /* ResultsOfSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E581739240091C60070AE9F /* ResultsOfSearchView.swift */; };
 		3EE2A2272400744D0064828A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A2262400744D0064828A /* AppDelegate.swift */; };
 		3EE2A2292400744D0064828A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A2282400744D0064828A /* SceneDelegate.swift */; };
 		3EE2A2302400744D0064828A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2A22F2400744D0064828A /* Assets.xcassets */; };
@@ -31,6 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E5817312400914F0070AE9F /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		3E5817332400916B0070AE9F /* ACollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACollectionView.swift; sourceTree = "<group>"; };
+		3E581735240091A50070AE9F /* RestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantView.swift; sourceTree = "<group>"; };
+		3E581737240091B20070AE9F /* AddCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionView.swift; sourceTree = "<group>"; };
+		3E581739240091C60070AE9F /* ResultsOfSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsOfSearchView.swift; sourceTree = "<group>"; };
 		3EE2A2232400744C0064828A /* FourSquare-GroupProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FourSquare-GroupProject.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE2A2262400744D0064828A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EE2A2282400744D0064828A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,8 +97,8 @@
 		3EE2A2252400744C0064828A /* FourSquare-GroupProject */ = {
 			isa = PBXGroup;
 			children = (
-				3EE2A26324007C440064828A /* AlbumsViews */,
 				3EE2A24A240074980064828A /* MapVCViews */,
+				3EE2A26324007C440064828A /* AlbumsViews */,
 				3EE2A2492400748C0064828A /* MapViewControllers */,
 				3EE2A24F240075420064828A /* AlbumsCollectionControllers */,
 				3EE2A248240074540064828A /* Supporting Files */,
@@ -130,6 +140,9 @@
 		3EE2A24A240074980064828A /* MapVCViews */ = {
 			isa = PBXGroup;
 			children = (
+				3E581735240091A50070AE9F /* RestaurantView.swift */,
+				3E581737240091B20070AE9F /* AddCollectionView.swift */,
+				3E581739240091C60070AE9F /* ResultsOfSearchView.swift */,
 			);
 			path = MapVCViews;
 			sourceTree = "<group>";
@@ -146,6 +159,8 @@
 		3EE2A26324007C440064828A /* AlbumsViews */ = {
 			isa = PBXGroup;
 			children = (
+				3E5817312400914F0070AE9F /* CollectionView.swift */,
+				3E5817332400916B0070AE9F /* ACollectionView.swift */,
 			);
 			path = AlbumsViews;
 			sourceTree = "<group>";
@@ -258,10 +273,15 @@
 			files = (
 				3EE2A253240075840064828A /* AddCollectionController.swift in Sources */,
 				3EE2A25A2400795C0064828A /* CollectionController.swift in Sources */,
+				3E581738240091B20070AE9F /* AddCollectionView.swift in Sources */,
 				3EE2A26224007AFB0064828A /* ResultsOfSearchController.swift in Sources */,
+				3E581736240091A50070AE9F /* RestaurantView.swift in Sources */,
 				3EE2A2272400744D0064828A /* AppDelegate.swift in Sources */,
 				3EE2A26024007AAE0064828A /* RestaurantsDetailController.swift in Sources */,
 				3EE2A25C240079B00064828A /* ACollectionController.swift in Sources */,
+				3E58173A240091C60070AE9F /* ResultsOfSearchView.swift in Sources */,
+				3E5817322400914F0070AE9F /* CollectionView.swift in Sources */,
+				3E5817342400916B0070AE9F /* ACollectionView.swift in Sources */,
 				3EE2A2292400744D0064828A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
