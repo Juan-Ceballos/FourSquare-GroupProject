@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EE1F81224008D1C004DF2C9 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1F81124008D1C004DF2C9 /* CollectionView.swift */; };
+		3EE1F81424008D31004DF2C9 /* ACollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1F81324008D31004DF2C9 /* ACollectionView.swift */; };
+		3EE1F81624008D62004DF2C9 /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1F81524008D62004DF2C9 /* RestaurantDetailView.swift */; };
+		3EE1F81824008D72004DF2C9 /* AddCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1F81724008D72004DF2C9 /* AddCollectionView.swift */; };
+		3EE1F81A24008D8E004DF2C9 /* ResultsOfSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1F81924008D8E004DF2C9 /* ResultsOfSearchView.swift */; };
 		3EE2A2272400744D0064828A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A2262400744D0064828A /* AppDelegate.swift */; };
 		3EE2A2292400744D0064828A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A2282400744D0064828A /* SceneDelegate.swift */; };
 		3EE2A2302400744D0064828A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2A22F2400744D0064828A /* Assets.xcassets */; };
@@ -31,6 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3EE1F81124008D1C004DF2C9 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionView.swift; path = ../../../../../Documents/CollectionView.swift; sourceTree = "<group>"; };
+		3EE1F81324008D31004DF2C9 /* ACollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ACollectionView.swift; path = ../../../../../Documents/ACollectionView.swift; sourceTree = "<group>"; };
+		3EE1F81524008D62004DF2C9 /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RestaurantDetailView.swift; path = ../../../../../Documents/RestaurantDetailView.swift; sourceTree = "<group>"; };
+		3EE1F81724008D72004DF2C9 /* AddCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddCollectionView.swift; path = ../../../../../Documents/AddCollectionView.swift; sourceTree = "<group>"; };
+		3EE1F81924008D8E004DF2C9 /* ResultsOfSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultsOfSearchView.swift; path = ../../../../../Documents/ResultsOfSearchView.swift; sourceTree = "<group>"; };
 		3EE2A2232400744C0064828A /* FourSquare-GroupProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FourSquare-GroupProject.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE2A2262400744D0064828A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EE2A2282400744D0064828A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,8 +97,8 @@
 		3EE2A2252400744C0064828A /* FourSquare-GroupProject */ = {
 			isa = PBXGroup;
 			children = (
-				3EE2A26324007C440064828A /* AlbumsViews */,
 				3EE2A24A240074980064828A /* MapVCViews */,
+				3EE2A26324007C440064828A /* AlbumsViews */,
 				3EE2A2492400748C0064828A /* MapViewControllers */,
 				3EE2A24F240075420064828A /* AlbumsCollectionControllers */,
 				3EE2A248240074540064828A /* Supporting Files */,
@@ -130,6 +140,9 @@
 		3EE2A24A240074980064828A /* MapVCViews */ = {
 			isa = PBXGroup;
 			children = (
+				3EE1F81524008D62004DF2C9 /* RestaurantDetailView.swift */,
+				3EE1F81724008D72004DF2C9 /* AddCollectionView.swift */,
+				3EE1F81924008D8E004DF2C9 /* ResultsOfSearchView.swift */,
 			);
 			path = MapVCViews;
 			sourceTree = "<group>";
@@ -146,6 +159,8 @@
 		3EE2A26324007C440064828A /* AlbumsViews */ = {
 			isa = PBXGroup;
 			children = (
+				3EE1F81124008D1C004DF2C9 /* CollectionView.swift */,
+				3EE1F81324008D31004DF2C9 /* ACollectionView.swift */,
 			);
 			path = AlbumsViews;
 			sourceTree = "<group>";
@@ -258,10 +273,15 @@
 			files = (
 				3EE2A253240075840064828A /* AddCollectionController.swift in Sources */,
 				3EE2A25A2400795C0064828A /* CollectionController.swift in Sources */,
+				3EE1F81824008D72004DF2C9 /* AddCollectionView.swift in Sources */,
 				3EE2A26224007AFB0064828A /* ResultsOfSearchController.swift in Sources */,
 				3EE2A2272400744D0064828A /* AppDelegate.swift in Sources */,
 				3EE2A26024007AAE0064828A /* RestaurantsDetailController.swift in Sources */,
 				3EE2A25C240079B00064828A /* ACollectionController.swift in Sources */,
+				3EE1F81624008D62004DF2C9 /* RestaurantDetailView.swift in Sources */,
+				3EE1F81A24008D8E004DF2C9 /* ResultsOfSearchView.swift in Sources */,
+				3EE1F81224008D1C004DF2C9 /* CollectionView.swift in Sources */,
+				3EE1F81424008D31004DF2C9 /* ACollectionView.swift in Sources */,
 				3EE2A2292400744D0064828A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
