@@ -15,7 +15,4 @@ class RestaurantsDetailController: UIViewController {
 
     }
     
-
-
-
 }

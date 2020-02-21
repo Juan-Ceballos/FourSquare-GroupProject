@@ -14,8 +14,5 @@ class AddCollectionController: UIViewController {
         super.viewDidLoad()
 
     }
-    
-
-   
 
 }
