@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EA0DEA62401E41300ACF1F8 /* CoreLocationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA0DEA52401E41300ACF1F8 /* CoreLocationSession.swift */; };
 		3EA4B2B5240096D9003C2EC4 /* RestaurantsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2B4240096D9003C2EC4 /* RestaurantsDetailView.swift */; };
 		3EA4B2B7240096EC003C2EC4 /* AddCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2B6240096EC003C2EC4 /* AddCollectionView.swift */; };
 		3EA4B2B924009701003C2EC4 /* ResultsOfSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2B824009701003C2EC4 /* ResultsOfSearchView.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3EA0DEA52401E41300ACF1F8 /* CoreLocationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationSession.swift; sourceTree = "<group>"; };
 		3EA4B2B4240096D9003C2EC4 /* RestaurantsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsDetailView.swift; sourceTree = "<group>"; };
 		3EA4B2B6240096EC003C2EC4 /* AddCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionView.swift; sourceTree = "<group>"; };
 		3EA4B2B824009701003C2EC4 /* ResultsOfSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsOfSearchView.swift; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EA0DEA42401E3DA00ACF1F8 /* LocationServices */ = {
+			isa = PBXGroup;
+			children = (
+				3EA0DEA52401E41300ACF1F8 /* CoreLocationSession.swift */,
+			);
+			path = LocationServices;
+			sourceTree = "<group>";
+		};
 		3EA4B2B224009667003C2EC4 /* AlbumsCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +154,7 @@
 		3EE2A2252400744C0064828A /* FourSquare-GroupProject */ = {
 			isa = PBXGroup;
 			children = (
+				3EA0DEA42401E3DA00ACF1F8 /* LocationServices */,
 				3EA4B2C1240097AA003C2EC4 /* TabController */,
 				3EA4B2C024009773003C2EC4 /* NetworkServices */,
 				3EA4B2B324009681003C2EC4 /* MapVCView */,
@@ -304,6 +315,7 @@
 			files = (
 				3EA4B2C924009E2C003C2EC4 /* MapController.swift in Sources */,
 				3EA4B2B5240096D9003C2EC4 /* RestaurantsDetailView.swift in Sources */,
+				3EA0DEA62401E41300ACF1F8 /* CoreLocationSession.swift in Sources */,
 				3EA4B2C3240097DA003C2EC4 /* TabBarController.swift in Sources */,
 				3EA4B2C724009B89003C2EC4 /* PhotoAPIClient.swift in Sources */,
 				3EA4B2B7240096EC003C2EC4 /* AddCollectionView.swift in Sources */,

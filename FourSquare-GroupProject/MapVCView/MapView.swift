@@ -7,15 +7,50 @@
 //
 
 import UIKit
+import MapKit
 
 class MapView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    public lazy var avenueMapView: MKMapView =    {
+       let mapView = MKMapView()
+        return mapView
+    }()
+    
+    public lazy var foodCollectionView: UICollectionView =  {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .systemIndigo
+        return collectionView
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: UIScreen.main.bounds)
+        commonInit()
     }
-    */
-
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+    
+    func commonInit()   {
+       setupAvenueMapView()
+    }
+    
+    private func setupAvenueMapView()   {
+        addSubview(avenueMapView)
+        
+        avenueMapView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+        
+            avenueMapView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            avenueMapView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            avenueMapView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            avenueMapView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+        
+        ])
+    }
+    
 }
