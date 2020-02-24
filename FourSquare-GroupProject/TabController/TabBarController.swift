@@ -9,9 +9,23 @@
 import UIKit
 
 class TabBarController: UITabBarController  {
+    
+    lazy var mapController: MapController =   {
+        let viewController = MapController()
+        viewController.tabBarItem = UITabBarItem(title: "search", image: UIImage(systemName: "magnifyingglass"), tag: 0)
+        return viewController
+        
+    }()
+    
+    lazy var collectionController: CollectionController =   {
+        let viewController = CollectionController()
+        viewController.tabBarItem = UITabBarItem(title: "collection", image: UIImage(systemName: "folder.badge.plus"), tag: 1)
+        return viewController
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewControllers = [MapController(), CollectionController()]
+        viewControllers = [mapController, collectionController]
     }
 }
