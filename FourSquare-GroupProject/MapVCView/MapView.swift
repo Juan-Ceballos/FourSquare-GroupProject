@@ -13,8 +13,8 @@ class MapView: UIView {
     
     public lazy var searchTheArea: UITextField = {
        let areaTextField = UITextField()
-                areaTextField.autocapitalizationType = .none
-               areaTextField.placeholder = "tell us the AREA you are interested in"
+        areaTextField.autocapitalizationType = .none
+        areaTextField.placeholder = "tell us the AREA you are interested in"
         areaTextField.backgroundColor = .white
         areaTextField.borderStyle = .roundedRect
         return areaTextField
@@ -22,9 +22,9 @@ class MapView: UIView {
     
     public lazy var searchTheKindOfFood: UITextField = {
           let foodTextField = UITextField()
-                   foodTextField.autocapitalizationType = .none
-                  foodTextField.placeholder = "tell us the FOOD you are interested in"
-    foodTextField.backgroundColor = .white
+        foodTextField.autocapitalizationType = .none
+        foodTextField.placeholder = "tell us the FOOD you are interested in"
+        foodTextField.backgroundColor = .white
         foodTextField.borderStyle = .roundedRect
            return foodTextField
        }()
@@ -84,7 +84,6 @@ class MapView: UIView {
                    searchTheArea.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -60),
                    searchTheArea.heightAnchor.constraint(equalToConstant: 40)
                 //   searchTheArea.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
-               
                ])
         
     }
