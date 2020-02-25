@@ -63,7 +63,8 @@ class MapView: UIView {
     NSLayoutConstraint.activate([
       foodCollectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 10),
       foodCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-      foodCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
+      foodCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+      foodCollectionView.heightAnchor.constraint(equalToConstant: 100)
     ])
   }
     

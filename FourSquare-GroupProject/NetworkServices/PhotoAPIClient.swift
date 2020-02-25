@@ -9,6 +9,36 @@
 import Foundation
 import NetworkHelper
 
+
+struct Results : Codable & Equatable {
+  let response : Response2
+}
+
+ struct Response2: Codable & Equatable {
+     let photos: Photos
+ }
+
+ struct Photos: Codable & Equatable {
+     let count: Int
+     let items: [Item]
+     let dupesRemoved: Int
+ }
+
+ struct Item: Codable & Equatable {
+     let id: String
+     let createdAt: Int
+     let itemPrefix: String
+     let suffix: String
+     let width, height: Int
+     let visibility: String
+
+     enum CodingKeys: String, CodingKey {
+         case id, createdAt
+         case itemPrefix = "prefix"
+         case suffix, width, height, visibility
+     }
+ }
+
 struct PhotoAPIClient {
 
   static func photoURL(venueID: String, completion: @escaping (Result<String, AppError>) -> ()) {
@@ -27,42 +57,17 @@ struct PhotoAPIClient {
         completion(.failure(.networkClientError(appError)))
       case .success(let data):
         do {
-          let result = try JSONDecoder().decode(<#T##type: Decodable.Protocol##Decodable.Protocol#>, from: <#T##Data#>)
+          let result = try JSONDecoder().decode(Results.self, from: data)
+          let info = result.response.photos.items
+          let pref = info.first?.itemPrefix
+          let suf = info.first?.suffix
+          let url = "\(pref)300x300\(suf)"
+          print(url)
+          completion(.success(url))
         } catch {
-          
+          completion(.failure(.decodingError(error)))
         }
       }
     }
   }
 }
-
-//
-//struct FourSquareAPIClient {
-//    static func getVenues(for near: String, query: String, completion: @escaping (Result<[Venue], AppError>) ->()) {
-//
-//        let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "sushi"
-//        let near = near.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "brooklyn"
-//        let enpointURLString = "https://api.foursquare.com/v2/venues/search?client_id=\(ApiKey.clientID)&client_secret=\(ApiKey.clientSecret)&v=20190208&near=\(near)&query=\(query)"
-//
-//        guard let url = URL(string: enpointURLString) else {
-//            completion(.failure(.badURL(enpointURLString)))
-//            return
-//        }
-//        let request = URLRequest(url: url)
-//
-//        NetworkHelper.shared.performDataTask(with: request) { (result) in
-//            switch result {
-//            case .failure(let error):
-//                completion(.failure(.networkClientError(error)))
-//            case .success(let data):
-//                do {
-//                    let searchResults = try JSONDecoder().decode(Data.self, from: data)
-//                    let venues = searchResults.response.venues
-//                    completion(.success(venues))
-//                } catch {
-//                    completion(.failure(.decodingError(error)))
-//                }
-//            }
-//        }
-//    }
-//}

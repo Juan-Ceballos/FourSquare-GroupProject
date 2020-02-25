@@ -14,54 +14,54 @@ import NetworkHelper
 
 
 class ForsquareProjectBackupTests: XCTestCase {
+  
+  
+  func testFSModel() {
     
+    struct Data: Codable & Equatable {
+      let response: Response
+    }
     
-    func testFSModel() {
-       
-        struct Data: Codable & Equatable {
-            let response: Response
-        }
-
-        struct Response: Codable & Equatable {
-            let venues: [Venue]
-        }
-
-        struct Venue: Codable & Equatable {
-            let name: String
-            let location: Location
-            let categories: [Category]
-            let hasPerk: Bool
-            let delivery: Delivery?
-        }
-
-        struct Location: Codable & Equatable {
-            let address: String
-            let lat: Double
-            let lng: Double
-            let postalCode: String
-            let city: String
-            let state: String
-            let country: String
-            let formattedAddress: [String]
-            let neighborhood: String?
-            let crossStreet: String?
-        }
-        struct Category: Codable & Equatable {
-            let shortName: String
-        }
-
-        struct Delivery: Codable & Equatable {
-            let id: String
-            let url: String
-            let provider: Provider
-        }
-
-        struct Provider: Codable & Equatable{
-            let name: String
-            //let icon: ProviderIcon
-        }
-        
-        let json = """
+    struct Response: Codable & Equatable {
+      let venues: [Venue]
+    }
+    
+    struct Venue: Codable & Equatable {
+      let name: String
+      let location: Location
+      let categories: [Category]
+      let hasPerk: Bool
+      let delivery: Delivery?
+    }
+    
+    struct Location: Codable & Equatable {
+      let address: String
+      let lat: Double
+      let lng: Double
+      let postalCode: String
+      let city: String
+      let state: String
+      let country: String
+      let formattedAddress: [String]
+      let neighborhood: String?
+      let crossStreet: String?
+    }
+    struct Category: Codable & Equatable {
+      let shortName: String
+    }
+    
+    struct Delivery: Codable & Equatable {
+      let id: String
+      let url: String
+      let provider: Provider
+    }
+    
+    struct Provider: Codable & Equatable{
+      let name: String
+      //let icon: ProviderIcon
+    }
+    
+    let json = """
         {
             "meta": {
                 "code": 200,
@@ -302,51 +302,130 @@ class ForsquareProjectBackupTests: XCTestCase {
         }
         
         """.data(using: .utf8)!
-        
-        // act
-        let venues = try! JSONDecoder().decode(Data.self, from: json)
-        // assert
-        XCTAssertEqual(venues.response.venues.count, 4)
-
-    }
     
-    func testRestaurantFound() {
-        // arrange
-        let name = "Sushi Tokyo"
-        let exp = XCTestExpectation(description: "search found")
-        
-        // act
-        FourSquareAPIClient.getVenues(for: "brooklyn", query: "sushi") { (result) in
-            switch result {
-            case .failure:
-                XCTFail()
-            case .success(let venues):
-                exp.fulfill()
-                XCTAssertEqual(venues.first?.name, name)
-            }
+    // act
+    let venues = try! JSONDecoder().decode(Data.self, from: json)
+    // assert
+    XCTAssertEqual(venues.response.venues.count, 4)
+    
+  }
+  
+  func testRestaurantFound() {
+    // arrange
+    let name = "Sushi Tokyo"
+    let exp = XCTestExpectation(description: "search found")
+    
+    // act
+    FourSquareAPIClient.getVenues(for: "brooklyn", query: "sushi") { (result) in
+      switch result {
+      case .failure:
+        XCTFail()
+      case .success(let venues):
+        exp.fulfill()
+        XCTAssertEqual(venues.first?.name, name)
+      }
+    }
+    wait(for: [exp], timeout: 5.0)
+    
+  }
+  
+  
+  
+  
+  // MARK: - Welcome
+  struct Results: Codable & Equatable {
+      let response: Response
+  }
+
+  // MARK: - Response
+  struct Response: Codable & Equatable {
+      let photos: Photos
+  }
+
+  // MARK: - Photos
+  struct Photos: Codable & Equatable {
+      let count: Int
+      let items: [Item]
+      let dupesRemoved: Int
+  }
+
+  // MARK: - Item
+  struct Item: Codable & Equatable {
+      let id: String
+      let createdAt: Int
+      let itemPrefix: String
+      let suffix: String
+      let width, height: Int
+      let visibility: String
+ 
+      enum CodingKeys: String, CodingKey {
+          case id, createdAt
+          case itemPrefix = "prefix"
+          case suffix, width, height, visibility
+      }
+  }
+  
+  func testPrefix() {
+  let data =
+  """
+    {
+    "meta": {
+        "code": 200,
+        "requestId": "5e543f280de0d9001bcd64d7"
+    },
+    "response": {
+        "photos": {
+            "count": 1,
+            "items": [
+                {
+                    "id": "5160412c498e09c17d7b87e4",
+                    "createdAt": 1365262636,
+                    "source": {
+                        "name": "Instagram",
+                        "url": "http://instagram.com"
+                    },
+                    "prefix": "https://fastly.4sqi.net/img/general/",
+                    "suffix": "/82007_cHf3A0muNVwivg_w1lfjVMkU7K99xN1txQwb2TjWC6E.jpg",
+                    "width": 612,
+                    "height": 612,
+                    "user": {
+                        "id": "82007",
+                        "firstName": "Pares",
+                        "lastName": "T",
+                        "photo": {
+                            "prefix": "https://fastly.4sqi.net/img/user/",
+                            "suffix": "/82007-OAAO2XEQHIPR3NQZ.jpg"
+                        }
+                    },
+                    "checkin": {
+                        "id": "5160412a498eedc7cc9f8f03",
+                        "createdAt": 1365262634,
+                        "type": "checkin",
+                        "timeZoneOffset": -240
+                    },
+                    "visibility": "public"
+                }
+            ],
+            "dupesRemoved": 0
         }
-        wait(for: [exp], timeout: 5.0)
-        
     }
+      }
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+  """.data(using: .utf8)!
+  
+  let expPrefix = "https://fastly.4sqi.net/img/general/"
+  
+  do {
+  let result = try JSONDecoder().decode(Results.self, from: data)
+    let info = result.response.photos.items
+    let url = info.first?.itemPrefix
+    XCTAssertEqual(expPrefix, url)
+  } catch {
+  XCTFail("error: \(error)")
+  }
+  
 }
+}
+
+

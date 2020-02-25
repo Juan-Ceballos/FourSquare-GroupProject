@@ -7,3 +7,40 @@
 //
 
 import Foundation
+import UIKit
+
+class TestScreenTwo: UIView {
+  public lazy var imageView : UIImageView = {
+    let iv = UIImageView()
+    iv.backgroundColor = .systemIndigo
+    return iv
+  }()
+ 
+  
+  
+  override init(frame: CGRect) {
+    super.init(frame: UIScreen.main.bounds)
+    commonInit()
+  }
+  
+  required init?(coder: NSCoder) {
+    super.init(coder: coder)
+    commonInit()
+  }
+  
+  private func commonInit() {
+    imageViewSetup()
+  }
+
+  private func imageViewSetup() {
+    addSubview(imageView)
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+      imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+      imageView.heightAnchor.constraint(equalToConstant: 300),
+      imageView.widthAnchor.constraint(equalToConstant: 300)
+    ])
+  }
+
+}

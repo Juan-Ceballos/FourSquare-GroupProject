@@ -35,6 +35,7 @@ extension MapController : UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mapCell", for: indexPath)
     cell.backgroundColor = .systemBlue
+    
     return cell
   }
   
