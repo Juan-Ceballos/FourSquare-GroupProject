@@ -11,6 +11,24 @@ import MapKit
 
 class MapView: UIView {
     
+    public lazy var searchTheArea: UITextField = {
+       let areaTextField = UITextField()
+                areaTextField.autocapitalizationType = .none
+               areaTextField.placeholder = "tell us the AREA you are interested in"
+        areaTextField.backgroundColor = .white
+        areaTextField.borderStyle = .roundedRect
+        return areaTextField
+    }()
+    
+    public lazy var searchTheKindOfFood: UITextField = {
+          let foodTextField = UITextField()
+                   foodTextField.autocapitalizationType = .none
+                  foodTextField.placeholder = "tell us the FOOD you are interested in"
+    foodTextField.backgroundColor = .white
+        foodTextField.borderStyle = .roundedRect
+           return foodTextField
+       }()
+    
     public lazy var avenueMapView: MKMapView =    {
        let mapView = MKMapView()
         return mapView
@@ -36,6 +54,8 @@ class MapView: UIView {
     
     func commonInit()   {
        setupAvenueMapView()
+        setUpAreaSearchBar()
+        setUpFoodSearchBar()
     }
     
     private func setupAvenueMapView()   {
@@ -45,7 +65,7 @@ class MapView: UIView {
         
         NSLayoutConstraint.activate([
         
-            avenueMapView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            avenueMapView.topAnchor.constraint(equalTo: topAnchor),
             avenueMapView.leadingAnchor.constraint(equalTo: leadingAnchor),
             avenueMapView.trailingAnchor.constraint(equalTo: trailingAnchor),
             avenueMapView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
@@ -53,4 +73,34 @@ class MapView: UIView {
         ])
     }
     
+    private func setUpAreaSearchBar() {
+        addSubview(searchTheArea)
+               
+               searchTheArea.translatesAutoresizingMaskIntoConstraints = false
+               
+               NSLayoutConstraint.activate([
+                searchTheArea.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+                   searchTheArea.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 60),
+                   searchTheArea.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -60),
+                   searchTheArea.heightAnchor.constraint(equalToConstant: 40)
+                //   searchTheArea.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+               
+               ])
+        
+    }
+    
+    private func setUpFoodSearchBar() {
+        addSubview(searchTheKindOfFood)
+                      
+                      searchTheKindOfFood.translatesAutoresizingMaskIntoConstraints = false
+                      
+                      NSLayoutConstraint.activate([
+                      
+                        searchTheKindOfFood.topAnchor.constraint(equalTo: searchTheArea.bottomAnchor),
+                          searchTheKindOfFood.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 60),
+                          searchTheKindOfFood.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -60),
+                          searchTheArea.heightAnchor.constraint(equalToConstant: 25)
+                      
+                      ])
+    }
 }
