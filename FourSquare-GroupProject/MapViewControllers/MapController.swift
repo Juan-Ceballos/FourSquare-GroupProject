@@ -50,6 +50,7 @@ class MapController: UIViewController {
            // what does this line mean
            
         // MARK: how to dismiss keyboard when user touchs screen
+        instanceOfMapView.actualMapView.delegate = self
         
            // set the delegates for both of the text fields...
            instanceOfMapView.searchTheArea.delegate = self
