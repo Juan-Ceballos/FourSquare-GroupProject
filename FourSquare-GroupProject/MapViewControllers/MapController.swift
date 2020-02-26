@@ -48,8 +48,12 @@ class MapController: UIViewController {
           // instanceOfMapView.addSubview(userTrackingButton)
       //  userTrackingButton.mapView = instanceOfMapView.avenueMapView
            // what does this line mean
+        
+        instanceOfMapView.foodCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "venuesCell")
            
         // MARK: how to dismiss keyboard when user touchs screen
+        
+        // delegeate for the map
         instanceOfMapView.actualMapView.delegate = self
         
            // set the delegates for both of the text fields...
@@ -113,13 +117,12 @@ class MapController: UIViewController {
 // MARK: Collection DataSource
 extension MapController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return allVenues.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "string", for: indexPath)
-        
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "venuesCell", for: indexPath)
+        cell.backgroundColor = .white
         
         return cell
     }
@@ -154,12 +157,16 @@ extension MapController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
+//        guard instanceOfMapView.searchTheKindOfFood.text!.isEmpty && instanceOfMapView.searchTheArea.text!.isEmpty else {
+//          //  instanceOfMapView.foodCollectionView.
+//        }
         
         guard let area = instanceOfMapView.searchTheArea.text , let food = instanceOfMapView.searchTheKindOfFood.text else {
                    //query(Thearea: area, specficItem: food)
                  fatalError("something is wrong with the text field.. double check inside of the textFieldShouldReturn")
                }
                        print("\(area) + \(food)")
+        
 
               loadTheVenuesOnTheMap(Thearea: area, specficItem: food)
 
