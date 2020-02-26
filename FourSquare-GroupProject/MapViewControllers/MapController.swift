@@ -42,17 +42,15 @@ class MapController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemTeal
         instanceOfMapView.actualMapView.showsUserLocation = true
-           
         // where do we want the the button to be 
            //userTrackingButton = MKUserTrackingButton(frame: CGRect(x: 20, y: 20, width: 200, height: 200))
           // instanceOfMapView.addSubview(userTrackingButton)
       //  userTrackingButton.mapView = instanceOfMapView.avenueMapView
            // what does this line mean
-        
         instanceOfMapView.foodCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "venuesCell")
            
         // MARK: how to dismiss keyboard when user touchs screen
-        
+    
         // delegeate for the map
         instanceOfMapView.actualMapView.delegate = self
         
@@ -69,13 +67,10 @@ class MapController: UIViewController {
    
     }
     
-    
     // make a function that will load the venues
     private func loadTheVenuesOnTheMap(Thearea area: String, specficItem food: String){
-        
          //   let area = instanceOfMapView.searchTheArea
        // let stuff = instanceOfMapView.searchTheKindOfFood
-        
         FourSquareAPIClient.getVenues(for: area , query: food ) { [weak self]
             (result) in
             switch result {
