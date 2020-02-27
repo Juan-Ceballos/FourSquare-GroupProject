@@ -18,6 +18,8 @@ class ACollectionController: UIViewController {
     }
   }
   
+  private var refreshController: UIRefreshControl!
+  
   override func loadView() {
     view = aCollectionView
   }
@@ -26,22 +28,36 @@ class ACollectionController: UIViewController {
     super.viewDidLoad()
     aCollectionView.tableView.dataSource = self
     aCollectionView.tableView.register(ACollectionTableCell.self, forCellReuseIdentifier: "aCollectionCell")
-    
+    configureRefreshController()
   }
   
+  private func configureRefreshController() {
+    refreshController = UIRefreshControl()
+    aCollectionView.tableView.refreshControl = refreshController
+    refreshController.addTarget(self, action: #selector(reloadTableView), for: .valueChanged)
+  }
+  
+  @objc private func reloadTableView() {
+    DispatchQueue.main.async {
+      self.aCollectionView.tableView.reloadData()
+      self.refreshController.endRefreshing()
+    }
+  }
 
   
 }
 
 extension ACollectionController : UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "aCollectionCell", for: indexPath)
-    
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "aCollectionCell", for: indexPath) as? ACollectionTableCell else {
+      fatalError("Unable to downcast as ACollectionTableCell")
+    }
+    cell.configCell()
     cell.backgroundColor = .systemPurple
     return cell
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 4
+    return 1
   }
 }
