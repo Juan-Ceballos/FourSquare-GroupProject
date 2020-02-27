@@ -7,15 +7,37 @@
 //
 
 import UIKit
+import DataPersistence
 
 class AddCollectionController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    // instance of data persistence
+    
+    private var dataPersistence: DataPersistence<Venue>?
+    
+    private let addCollectionView = AddCollectionView()
+    
+    override func loadView() {
+        view = addCollectionView
     }
     
-
-   
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .systemBackground
+        configureNavBar()
+    }
+    
+    private func configureNavBar()  {
+        self.title = "Add to or Create Collection"
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(xButtonPressed))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .plain, target: self, action: #selector(createButtonPressed))
+    }
+    
+    @objc private func xButtonPressed()   {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func createButtonPressed()  {
+        print("pressed")
+    }
 
 }

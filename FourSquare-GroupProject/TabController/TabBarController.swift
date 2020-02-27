@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import DataPersistence
 
 class TabBarController: UITabBarController  {
+    
+    private var dataPersistence = DataPersistence<Venue>(filename: "venues.plist")
     
     lazy var mapController: MapController =   {
         let viewController = MapController()
@@ -26,6 +29,6 @@ class TabBarController: UITabBarController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewControllers = [mapController, collectionController]
+        viewControllers = [mapController, UINavigationController(rootViewController: collectionController)]
     }
 }
