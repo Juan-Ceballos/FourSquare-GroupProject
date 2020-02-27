@@ -9,22 +9,39 @@
 import UIKit
 
 class ACollectionController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+  
+  private var aCollectionView = ACollectioniView()
+  
+  private var savedVenues = [Venue]() {
+    didSet {
+      self.aCollectionView.tableView.reloadData()
     }
+  }
+  
+  override func loadView() {
+    view = aCollectionView
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    aCollectionView.tableView.dataSource = self
+    aCollectionView.tableView.register(ACollectionTableCell.self, forCellReuseIdentifier: "aCollectionCell")
     
+  }
+  
 
-    /*
-    // MARK: - Navigation
+  
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+extension ACollectionController : UITableViewDataSource {
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "aCollectionCell", for: indexPath)
+    
+    cell.backgroundColor = .systemPurple
+    return cell
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 4
+  }
 }

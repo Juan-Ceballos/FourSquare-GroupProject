@@ -16,6 +16,8 @@ class MapController: UIViewController {
     private let locationSession = CoreLocationSession()
     
     var region: MKCoordinateRegion?
+  
+  var mapView = MKMapView()
     
     private var isShowingAnnoations = false
     
@@ -66,6 +68,7 @@ class MapController: UIViewController {
         
         // delegated for collection view
         instanceOfMapView.foodCollectionView.delegate = self
+      mapView.delegate = self
         loadMap()
    
     }
