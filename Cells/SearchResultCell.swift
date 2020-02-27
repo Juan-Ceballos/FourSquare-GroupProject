@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import Kingfisher
 import ImageKit
 
 class SearchResultsCell: UICollectionViewCell {
@@ -100,28 +101,30 @@ class SearchResultsCell: UICollectionViewCell {
     public func configureCell(for venue: Venue) {
         currentVenue = venue
         venueNameLabel.text = venue.name
-       // venueCategoryLabel.text = venue.categories[1].shortName
-     /*
-        PhotoAPIClient.photoURL(venueID: venue.id) { [weak self] (result) in
+        //venueCategoryLabel.text = venue.categories[0].shortName
+     
+        PhotoAPIClient.photoURL(venue: venue) { [weak self] (result) in
             switch result {
             case .failure:
                 DispatchQueue.main.async {
                     self?.venueImage.image = UIImage(named: "exclamationmark - octagon")
                 }
             case .success(let image):
-                DispatchQueue.main.async {
+             
                     self?.venueImage.getImage(with: image, completion: { (result) in
                         switch result {
                         case .failure:
                             print("fail")
                         case .success(let image):
-                            self?.venueImage.image = image
+                            DispatchQueue.main.async {
+                                self?.venueImage.image = image
+                            }
                         }
                     })
-                }
+                
             }
         }
-        */
+        
     }
 }
 

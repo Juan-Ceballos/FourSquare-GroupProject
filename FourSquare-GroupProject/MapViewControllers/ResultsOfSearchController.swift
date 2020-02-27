@@ -76,10 +76,11 @@ extension ResultsOfSearchController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        print("venue selected")
         let selectedVenue = searchResults[indexPath.row]
         
         let detailVC = RestaurantsDetailController(dataPersistence, selectedVenue)
-        navigationController?.pushViewController(detailVC, animated: true)
+        let adetailVC = UINavigationController(rootViewController: detailVC)
+        navigationController?.pushViewController(adetailVC, animated: true)
     }
 }
