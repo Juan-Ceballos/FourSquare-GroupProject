@@ -22,8 +22,8 @@ class TabBarController: UITabBarController  {
         
     }()
     
-    lazy var collectionController: ACollectionController =   {
-        let viewController = ACollectionController(dataPersistence)
+    lazy var collectionController: AlbumsCollectionsController =   {
+        let viewController = AlbumsCollectionsController(tabBarPersistance)
         viewController.tabBarItem = UITabBarItem(title: "collection", image: UIImage(systemName: "folder.badge.plus"), tag: 1)
         return viewController
     }()

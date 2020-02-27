@@ -52,7 +52,8 @@ extension ACollectionController : UITableViewDataSource {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "aCollectionCell", for: indexPath) as? ACollectionTableCell else {
       fatalError("Unable to downcast as ACollectionTableCell")
     }
-    cell.configCell()
+    let venue = savedVenues[indexPath.row]
+    cell.configCell(venue: venue)
     cell.backgroundColor = .systemPurple
     return cell
   }

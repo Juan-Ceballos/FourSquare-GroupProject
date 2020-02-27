@@ -7,8 +7,18 @@
 //
 
 import UIKit
+import DataPersistence
 
-class CollectionController: UIViewController {
+class AlbumsCollectionsController: UIViewController {
+    
+    private let dp: DataPersistence<Venue>
+    init(_ dataPersistence:DataPersistence<Venue>) {
+        self.dp = dataPersistence
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coser:) has  not been implemented")
+    }
 
     let collectionView = CollectionView()
     var collections = [String]()
@@ -38,7 +48,7 @@ class CollectionController: UIViewController {
     
 }
 
-extension CollectionController: UICollectionViewDataSource  {
+extension AlbumsCollectionsController: UICollectionViewDataSource  {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         10
     }
@@ -55,7 +65,7 @@ extension CollectionController: UICollectionViewDataSource  {
     
 }
 
-extension CollectionController: UICollectionViewDelegateFlowLayout    {
+extension AlbumsCollectionsController: UICollectionViewDelegateFlowLayout    {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemSize = CGSize(width: 200, height: 200)
         return itemSize

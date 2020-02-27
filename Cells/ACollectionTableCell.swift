@@ -81,9 +81,9 @@ class ACollectionTableCell: UITableViewCell {
     ])
   }
   
-  public func configCell() {
+    public func configCell(venue: Venue) {
 
-    PhotoAPIClient.photoURL(venueID: "") { [weak self] (result) in
+    PhotoAPIClient.photoURL(venue: venue) { [weak self] (result) in
       switch result {
       case .failure(let appError1):
         print("fail: \(appError1)")
