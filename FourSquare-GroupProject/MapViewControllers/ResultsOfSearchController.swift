@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import DataPersistence
 
 class ResultsOfSearchController: UIViewController {
+    
+    let dataPersistence: DataPersistence<Venue>
 
     private let searchResultView = SearchResultsView()
      private var searchResults = [Venue]()
     
-    init(_ venues: [Venue]) {
+    init(_ dataPersistence:DataPersistence<Venue>, _ venues: [Venue]) {
+        self.dataPersistence = dataPersistence
         searchResults = venues
         super.init(nibName: nil, bundle: nil)
     }
@@ -63,5 +67,11 @@ extension ResultsOfSearchController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedVenue = searchResults[indexPath.row]
+        let detailVC = RestaurantsDetailController(dataPersistence, selectedVenue)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
