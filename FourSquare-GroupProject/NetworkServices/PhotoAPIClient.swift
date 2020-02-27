@@ -41,8 +41,8 @@ struct Results : Codable & Equatable {
 
 struct PhotoAPIClient {
 
-  static func photoURL(venueID: String, completion: @escaping (Result<String, AppError>) -> ()) {
-    let endpoint = "https://api.foursquare.com/v2/venues/4aa52d50f964a520834720e3/photos?client_id=\(ApiKey.clientID)&client_secret=\(ApiKey.clientSecret)"
+  static func photoURL(venueID: Venue, completion: @escaping (Result<String, AppError>) -> ()) {
+    let endpoint = "https://api.foursquare.com/v2/venues/\(venueID.id)/photos?client_id=\(ApiKey.clientID)&client_secret=\(ApiKey.clientSecret)"
     
     guard let url = URL(string: endpoint) else {
       completion(.failure(.badURL(endpoint)))
