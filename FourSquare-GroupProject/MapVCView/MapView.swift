@@ -9,7 +9,15 @@
 import UIKit
 import MapKit
 
+protocol SearchDelegate: AnyObject {
+    func listenForButtonPressed(_ MapView: MapView, venues: [Venue])
+}
+
 class MapView: UIView {
+    
+    weak var delegate: SearchDelegate?
+    
+    private var venues = [Venue]()
     
     private lazy var panGesture: UIGestureRecognizer = {
         let gesture = UITapGestureRecognizer()
@@ -22,11 +30,11 @@ class MapView: UIView {
         button.imageView?.image = UIImage(systemName: "line.horizontal.3")
         button.tintColor = .black
         button.backgroundColor = .black
+        button.addTarget(self, action: #selector(buttonSegue), for: .touchUpInside)
+
         return button
     }()
-    
-    
-    
+
     public lazy var searchTheArea: UITextField = {
         let areaTextField = UITextField()
         areaTextField.autocapitalizationType = .none
@@ -59,7 +67,7 @@ class MapView: UIView {
         collectionView.backgroundColor = .systemIndigo
         return collectionView
     }()
-    
+        
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -69,6 +77,16 @@ class MapView: UIView {
         super.init(coder: coder)
         commonInit()
     }
+    
+    
+    
+    @objc func buttonSegue(_ sender: UIButton) {
+    
+        delegate?.listenForButtonPressed(self, venues: venues)
+
+        
+    }
+    
     
     func commonInit()   {
         setupAvenueMapView()

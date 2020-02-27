@@ -23,11 +23,11 @@ class MapController: UIViewController {
 
     // this is the instance of the button
     private var userTrackingButton: MKUserTrackingButton!
+    
 
     override func loadView() {
         view = instanceOfMapView
     }
-    
     
     private var allVenues = [Venue]()
     {
@@ -60,6 +60,9 @@ class MapController: UIViewController {
         
         // access to user location
         instanceOfMapView.actualMapView.showsUserLocation = true
+        
+//        weak var delegate = instanceOfMapView
+        instanceOfMapView.delegate = self
         
         // delegated for collection view
         instanceOfMapView.foodCollectionView.delegate = self
@@ -105,7 +108,6 @@ class MapController: UIViewController {
         self.annotations = annotationsInSideOfFunction
         return annotationsInSideOfFunction
     }
-    
     
 } // the end of the controller class
 
@@ -212,3 +214,22 @@ extension MapController: MKMapViewDelegate {
     
     
 }
+
+// extension for the pressed button
+extension MapController: SearchDelegate {
+    func listenForButtonPressed(_ MapView: MapView, venues: [Venue]) {
+        
+        guard let searchedVenues = allVenues as? [Venue] else {
+            print("there are no venues")
+            return
+        }
+        
+        let instance = ResultsOfSearchController(searchedVenues)
+        
+        present(instance,animated: true)
+       // push(instance, animated: true)
+
+      //  UINavigationController.pushViewController(instance)
+    }
+}
+
