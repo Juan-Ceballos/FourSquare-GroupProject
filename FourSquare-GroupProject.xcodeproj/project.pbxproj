@@ -33,6 +33,7 @@
 		3EE2A26024007AAE0064828A /* RestaurantsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A25F24007AAD0064828A /* RestaurantsDetailController.swift */; };
 		3EE2A26224007AFB0064828A /* ResultsOfSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A26124007AFB0064828A /* ResultsOfSearchController.swift */; };
 		552B32D324047188007621AB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B32D224047188007621AB /* Config.swift */; };
+		58202DB02408421000054A9B /* ACollectionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58202DAF2408421000054A9B /* ACollectionTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		3EE2A25F24007AAD0064828A /* RestaurantsDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsDetailController.swift; sourceTree = "<group>"; };
 		3EE2A26124007AFB0064828A /* ResultsOfSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsOfSearchController.swift; sourceTree = "<group>"; };
 		552B32D224047188007621AB /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		58202DAF2408421000054A9B /* ACollectionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACollectionTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				3E90A26F2407061F0082D5C7 /* SearchResultCell.swift */,
+				58202DAF2408421000054A9B /* ACollectionTableCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				3EE2A2272400744D0064828A /* AppDelegate.swift in Sources */,
 				3EA4B2B924009701003C2EC4 /* ResultsOfSearchView.swift in Sources */,
 				3EE2A26024007AAE0064828A /* RestaurantsDetailController.swift in Sources */,
+				58202DB02408421000054A9B /* ACollectionTableCell.swift in Sources */,
 				3EE2A25C240079B00064828A /* ACollectionController.swift in Sources */,
 				3EA4B2BB24009729003C2EC4 /* CollectionView.swift in Sources */,
 				3E90A2702407061F0082D5C7 /* SearchResultCell.swift in Sources */,
