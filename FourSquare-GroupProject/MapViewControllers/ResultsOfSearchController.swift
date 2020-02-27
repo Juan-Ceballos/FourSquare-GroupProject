@@ -14,7 +14,13 @@ class ResultsOfSearchController: UIViewController {
     let dataPersistence: DataPersistence<Venue>
 
     private let searchResultView = SearchResultsView()
-     private var searchResults = [Venue]()
+    private var searchResults = [Venue]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.searchResultView.collectionView.reloadData()
+            }
+        }
+    }
     
     init(_ dataPersistence:DataPersistence<Venue>, _ venues: [Venue]) {
         self.dataPersistence = dataPersistence
@@ -70,7 +76,9 @@ extension ResultsOfSearchController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         let selectedVenue = searchResults[indexPath.row]
+        
         let detailVC = RestaurantsDetailController(dataPersistence, selectedVenue)
         navigationController?.pushViewController(detailVC, animated: true)
     }
