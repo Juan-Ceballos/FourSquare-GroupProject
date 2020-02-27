@@ -41,8 +41,8 @@ struct Results : Codable & Equatable {
 
 struct PhotoAPIClient {
 
-  static func photoURL(venueID: String, completion: @escaping (Result<String, AppError>) -> ()) {
-    let endpoint = "https://api.foursquare.com/v2/venues/4aa52d50f964a520834720e3/photos?client_id=\(ApiKey.clientID)&client_secret=\(ApiKey.clientSecret)"
+  static func photoURL(venue: Venue, completion: @escaping (Result<String, AppError>) -> ()) {
+    let endpoint = "https://api.foursquare.com/v2/venues/\(venue.id)/photos?client_id=\(ApiKey.clientID)&client_secret=\(ApiKey.clientSecret)&v=20200201"
     
     guard let url = URL(string: endpoint) else {
       completion(.failure(.badURL(endpoint)))
@@ -57,12 +57,16 @@ struct PhotoAPIClient {
         completion(.failure(.networkClientError(appError)))
       case .success(let data):
         do {
+//          https://fastly.4sqi.net/img/general/original/82007_cHf3A0muNVwivg_w1lfjVMkU7K99xN1txQwb2TjWC6E.jpg
           let result = try JSONDecoder().decode(Results.self, from: data)
           let info = result.response.photos.items
           let pref = info.first?.itemPrefix
           let suf = info.first?.suffix
-          let url = "\(pref)300x300\(suf)"
-          print(url)
+          let url = "\(pref)100x100\(suf)"
+          let url1 = "https://fastly.4sqi.net/img/general/100x100/82007_cHf3A0muNVwivg_w1lfjVMkU7K99xN1txQwb2TjWC6E.jpg"
+          print("hardcoded \n\(url1)")
+          print("factored \n\(url)")
+          
           completion(.success(url))
         } catch {
           completion(.failure(.decodingError(error)))
