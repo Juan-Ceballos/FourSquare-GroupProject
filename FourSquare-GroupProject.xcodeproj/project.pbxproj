@@ -28,7 +28,7 @@
 		3EE2A23E2400744D0064828A /* FourSquare_GroupProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A23D2400744D0064828A /* FourSquare_GroupProjectTests.swift */; };
 		3EE2A24D240074BA0064828A /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3EE2A24C240074BA0064828A /* ImageKit */; };
 		3EE2A253240075840064828A /* AddCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A252240075840064828A /* AddCollectionController.swift */; };
-		3EE2A25A2400795C0064828A /* CollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A2592400795C0064828A /* CollectionController.swift */; };
+		3EE2A25A2400795C0064828A /* AlbumsCollectionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A2592400795C0064828A /* AlbumsCollectionsController.swift */; };
 		3EE2A25C240079B00064828A /* ACollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A25B240079B00064828A /* ACollectionController.swift */; };
 		3EE2A26024007AAE0064828A /* RestaurantsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A25F24007AAD0064828A /* RestaurantsDetailController.swift */; };
 		3EE2A26224007AFB0064828A /* ResultsOfSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A26124007AFB0064828A /* ResultsOfSearchController.swift */; };
@@ -71,7 +71,7 @@
 		3EE2A23D2400744D0064828A /* FourSquare_GroupProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquare_GroupProjectTests.swift; sourceTree = "<group>"; };
 		3EE2A23F2400744D0064828A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EE2A252240075840064828A /* AddCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionController.swift; sourceTree = "<group>"; };
-		3EE2A2592400795C0064828A /* CollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionController.swift; sourceTree = "<group>"; };
+		3EE2A2592400795C0064828A /* AlbumsCollectionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCollectionsController.swift; sourceTree = "<group>"; };
 		3EE2A25B240079B00064828A /* ACollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACollectionController.swift; sourceTree = "<group>"; };
 		3EE2A25F24007AAD0064828A /* RestaurantsDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsDetailController.swift; sourceTree = "<group>"; };
 		3EE2A26124007AFB0064828A /* ResultsOfSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsOfSearchController.swift; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 		3EE2A24F240075420064828A /* AlbumsCollectionControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3EE2A2592400795C0064828A /* CollectionController.swift */,
+				3EE2A2592400795C0064828A /* AlbumsCollectionsController.swift */,
 				3EE2A25B240079B00064828A /* ACollectionController.swift */,
 			);
 			path = AlbumsCollectionControllers;
@@ -346,7 +346,7 @@
 				3EE2A253240075840064828A /* AddCollectionController.swift in Sources */,
 				3EA4B2C524009B77003C2EC4 /* FourSquareAPIClient.swift in Sources */,
 				3EDE29FC24046D3D00F6B888 /* Venue.swift in Sources */,
-				3EE2A25A2400795C0064828A /* CollectionController.swift in Sources */,
+				3EE2A25A2400795C0064828A /* AlbumsCollectionsController.swift in Sources */,
 				3EA4B2BD24009737003C2EC4 /* ACollectionView.swift in Sources */,
 				3EA4B2CB24009E73003C2EC4 /* MapView.swift in Sources */,
 				3EE2A26224007AFB0064828A /* ResultsOfSearchController.swift in Sources */,
