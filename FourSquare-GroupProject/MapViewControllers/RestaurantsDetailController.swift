@@ -49,7 +49,7 @@ class RestaurantsDetailController: UIViewController {
         
         restaurantDetailView.map.delegate = self
         
-        getDirections()
+        
         updateUI()
         loadMap()
         
@@ -58,6 +58,7 @@ class RestaurantsDetailController: UIViewController {
     private func loadMap() {
         let annotation = makeAnnotation(for: selectedVenue)
         restaurantDetailView.map.addAnnotation(annotation)
+        getDirections()
     }
     
     private func makeAnnotation(for venue: Venue) -> MKPointAnnotation {
@@ -171,6 +172,12 @@ extension RestaurantsDetailController: MKMapViewDelegate {
         }
         return annotationView
     }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+           let renderer = MKPolylineRenderer(polyline: overlay as! MKPolyline)
+           renderer.strokeColor = UIColor.blue
+           return renderer
+       }
 
 func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
     if isShowingNewAnnotations {
