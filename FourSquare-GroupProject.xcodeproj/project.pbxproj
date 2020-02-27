@@ -26,7 +26,6 @@
 		3EE2A2302400744D0064828A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2A22F2400744D0064828A /* Assets.xcassets */; };
 		3EE2A2332400744D0064828A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2A2312400744D0064828A /* LaunchScreen.storyboard */; };
 		3EE2A23E2400744D0064828A /* FourSquare_GroupProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A23D2400744D0064828A /* FourSquare_GroupProjectTests.swift */; };
-		3EE2A24D240074BA0064828A /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3EE2A24C240074BA0064828A /* ImageKit */; };
 		3EE2A253240075840064828A /* AddCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A252240075840064828A /* AddCollectionController.swift */; };
 		3EE2A25A2400795C0064828A /* AlbumsCollectionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A2592400795C0064828A /* AlbumsCollectionsController.swift */; };
 		3EE2A25C240079B00064828A /* ACollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A25B240079B00064828A /* ACollectionController.swift */; };
@@ -34,6 +33,7 @@
 		3EE2A26224007AFB0064828A /* ResultsOfSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A26124007AFB0064828A /* ResultsOfSearchController.swift */; };
 		552B32D324047188007621AB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B32D224047188007621AB /* Config.swift */; };
 		58202DB02408421000054A9B /* ACollectionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58202DAF2408421000054A9B /* ACollectionTableCell.swift */; };
+		8DCC8EDF24087DE500222C0A /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8DCC8EDE24087DE500222C0A /* ImageKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EE2A24D240074BA0064828A /* ImageKit in Frameworks */,
+				8DCC8EDF24087DE500222C0A /* ImageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +247,7 @@
 			);
 			name = "FourSquare-GroupProject";
 			packageProductDependencies = (
-				3EE2A24C240074BA0064828A /* ImageKit */,
+				8DCC8EDE24087DE500222C0A /* ImageKit */,
 			);
 			productName = "FourSquare-GroupProject";
 			productReference = 3EE2A2232400744C0064828A /* FourSquare-GroupProject.app */;
@@ -300,7 +300,7 @@
 			);
 			mainGroup = 3EE2A21A2400744C0064828A;
 			packageReferences = (
-				3EE2A24B240074BA0064828A /* XCRemoteSwiftPackageReference "ImageKit" */,
+				8DCC8EDD24087DE500222C0A /* XCRemoteSwiftPackageReference "ImageKit" */,
 			);
 			productRefGroup = 3EE2A2242400744C0064828A /* Products */;
 			projectDirPath = "";
@@ -619,20 +619,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3EE2A24B240074BA0064828A /* XCRemoteSwiftPackageReference "ImageKit" */ = {
+		8DCC8EDD24087DE500222C0A /* XCRemoteSwiftPackageReference "ImageKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alexpaul/ImageKit";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.4;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3EE2A24C240074BA0064828A /* ImageKit */ = {
+		8DCC8EDE24087DE500222C0A /* ImageKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3EE2A24B240074BA0064828A /* XCRemoteSwiftPackageReference "ImageKit" */;
+			package = 8DCC8EDD24087DE500222C0A /* XCRemoteSwiftPackageReference "ImageKit" */;
 			productName = ImageKit;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -60,8 +60,18 @@ struct PhotoAPIClient {
 //          https://fastly.4sqi.net/img/general/original/82007_cHf3A0muNVwivg_w1lfjVMkU7K99xN1txQwb2TjWC6E.jpg
           let result = try JSONDecoder().decode(Results.self, from: data)
           let info = result.response.photos.items
-          let pref = info.first?.itemPrefix
-          let suf = info.first?.suffix
+         // let pref = info.first?.itemPrefix
+          // let suf = info.first?.suffix
+            
+            guard let pref = info.first?.itemPrefix else {
+                print("pref - this is wrong")
+                return
+            }
+            
+            guard let suf = info.first?.suffix else {
+                print("info.first?.suffix is WRONG")
+                return
+            }
           let url = "\(pref)100x100\(suf)"
           let url1 = "https://fastly.4sqi.net/img/general/100x100/82007_cHf3A0muNVwivg_w1lfjVMkU7K99xN1txQwb2TjWC6E.jpg"
           print("hardcoded \n\(url1)")

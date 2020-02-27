@@ -41,6 +41,7 @@ class MapView: UIView {
         areaTextField.autocapitalizationType = .none
         areaTextField.placeholder = "tell us the AREA you are interested in"
         areaTextField.backgroundColor = .white
+        areaTextField.text = "New York"
         areaTextField.borderStyle = .roundedRect
         areaTextField.clearButtonMode = .whileEditing
         return areaTextField
@@ -52,6 +53,7 @@ class MapView: UIView {
         foodTextField.placeholder = "tell us the FOOD you are interested in"
         foodTextField.backgroundColor = .white
         foodTextField.borderStyle = .roundedRect
+        foodTextField.text = "roti"
         foodTextField.clearButtonMode = .whileEditing
         return foodTextField
     }()
