@@ -100,7 +100,8 @@ class SearchResultsCell: UICollectionViewCell {
     public func configureCell(for venue: Venue) {
         currentVenue = venue
         venueNameLabel.text = venue.name
-        venueCategoryLabel.text = venue.categories[1].shortName
+       // venueCategoryLabel.text = venue.categories[1].shortName
+     /*
         PhotoAPIClient.photoURL(venueID: venue.id) { [weak self] (result) in
             switch result {
             case .failure:
@@ -120,6 +121,7 @@ class SearchResultsCell: UICollectionViewCell {
                 }
             }
         }
+        */
     }
 }
 

@@ -120,7 +120,7 @@ class RestaurantsDetailController: UIViewController {
         
         restaurantDetailView.venueNameLabel.text = selectedVenue.name
         restaurantDetailView.venueAddressLabel.text = selectedVenue.location.formattedAddress.joined(separator: ",")
-        
+        /*
         PhotoAPIClient.photoURL(venueID: selectedVenue.id) { [weak self] (result) in
             switch result {
             case .failure:
@@ -140,6 +140,7 @@ class RestaurantsDetailController: UIViewController {
                 }
             }
         }
+        */
     }
 
 }

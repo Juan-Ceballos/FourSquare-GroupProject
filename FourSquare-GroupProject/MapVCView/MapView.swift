@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import DataPersistence
 
 protocol SearchDelegate: AnyObject {
     func listenForButtonPressed(_ MapView: MapView, venues: [Venue])
@@ -107,15 +108,15 @@ class MapView: UIView {
             print("we panning bitch")
             return
         }
-        reloadTheAnnotations()
+       //reloadTheAnnotations()
     }
     
-    private func reloadTheAnnotations() {
-        let controller = MapController()
-        
-        // inside of loadMap the annotation func that has a return value gets called and used.
-        controller.loadMap()
-    }
+//    private func reloadTheAnnotations() {
+//        let controller = MapController()
+//
+//        // inside of loadMap the annotation func that has a return value gets called and used.
+//        controller.loadMap()
+//    }
     
     private func setUpFoodSearchBar() {
            addSubview(searchTheKindOfFood)

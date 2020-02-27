@@ -8,12 +8,23 @@
 
 import UIKit
 import MapKit
+import DataPersistence
 
 class MapController: UIViewController {
 
     let instanceOfMapView = MapView()
     
     private let locationSession = CoreLocationSession()
+    
+    private let dp: DataPersistence<Venue>
+      init(_ dataPersistence:DataPersistence<Venue>) {
+          self.dp = dataPersistence
+          super.init(nibName: nil, bundle: nil)
+      }
+      required init?(coder: NSCoder) {
+          fatalError("init(coser:) has  not been implemented")
+      }
+    
     
     var region: MKCoordinateRegion?
   
@@ -227,7 +238,7 @@ extension MapController: SearchDelegate {
             return
         }
         
-        let instance = ResultsOfSearchController(searchedVenues)
+        let instance = ResultsOfSearchController(dp, searchedVenues)
         
         present(instance,animated: true)
        // push(instance, animated: true)
