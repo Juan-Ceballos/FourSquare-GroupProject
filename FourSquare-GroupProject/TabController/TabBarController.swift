@@ -11,8 +11,10 @@ import DataPersistence
 
 class TabBarController: UITabBarController  {
     
+
     private var tabBarPersistance =  DataPersistence<Venue>(filename:"venue.plist")
     private var venues = [Venue]()
+
     lazy var mapController: MapController =   {
         let viewController = MapController(tabBarPersistance)
         viewController.tabBarItem = UITabBarItem(title: "search", image: UIImage(systemName: "magnifyingglass"), tag: 0)
@@ -29,6 +31,6 @@ class TabBarController: UITabBarController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewControllers = [mapController, collectionController]
+        viewControllers = [mapController, UINavigationController(rootViewController: collectionController)]
     }
 }
