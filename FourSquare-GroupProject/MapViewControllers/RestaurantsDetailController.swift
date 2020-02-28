@@ -114,8 +114,9 @@ class RestaurantsDetailController: UIViewController {
                                    // present(adetailVC,animated: true)
                                   //present(adetailVC, animated: true)
                   //  self.navigationController?.pushViewController(addCollVC, animated: true)
+       
         present(saveVenueVC, animated: true)
-                 //   navigationController?.pushViewController(saveVenueVC, animated: true)
+                 //  navigationController?.pushViewController(saveVenueVC, animated: true)
               //  }
                 
 //            } catch {
