@@ -99,8 +99,19 @@ class RestaurantsDetailController: UIViewController {
             showAlert(title: "Ooops!", message: "This place was already saved to your collections!")
         } else {
             do {
+
                 try dataPersistence.createItem(selectedVenue)
                 showAlert(title: "Yay!", message: "New Great Place was Saved to Your Collection!")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+                    self.dismiss(animated: true)
+                    let addCollVC = AddCollectionController(self.dataPersistence, venue: self.selectedVenue)
+                    //              let adetailVC = UINavigationController(rootViewController: addCollVC)
+                                   // present(adetailVC,animated: true)
+                                  //present(adetailVC, animated: true)
+                    self.navigationController?.pushViewController(addCollVC, animated: true)
+                }
+                
             } catch {
                 showAlert(title: "Error", message: "Sorry, we were unable to save this venue.")
             }
