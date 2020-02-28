@@ -16,7 +16,7 @@ class AlbumsCollectionsController: UIViewController {
     //
     
     private let dp: DataPersistence<AlbumCollection>
-    private var secondDataPer = DataPersistence<AlbumCollection>(filename: "collection.plist")
+    private var secondDataPer = DataPersistence<AlbumCollection>(filename: "collections.plist")
 
     init(_ dataPersistence:DataPersistence<AlbumCollection>) {
         self.dp = dataPersistence
@@ -46,19 +46,25 @@ class AlbumsCollectionsController: UIViewController {
         collectionView.collections.register(SearchResultsCell.self, forCellWithReuseIdentifier: "searchResultCell")
         collectionView.collections.dataSource = self
         collectionView.collections.delegate = self
+        dp.delegate = self
+        secondDataPer.delegate = self
         configureNavBar()
-        
-        
+        loadCollections()
     }
     
-//    private func loadAlbulms()  {
-//        do  {
-//            //let data = try
-//        }
-//        catch   {
-//
-//        }
-    //}
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        //loadCollections()
+    }
+    
+    
+    private func loadCollections() {
+        do {
+            collections = try secondDataPer.loadItems()
+        } catch {
+            print(error)
+        }
+    }
     
     private func configureNavBar()  {
         self.navigationItem.title = "My Collection"
@@ -131,12 +137,11 @@ extension AlbumsCollectionsController: AddCollectionGroupDelegate   {
 
 extension AlbumsCollectionsController: DataPersistenceDelegate  {
     func didSaveItem<T>(_ persistenceHelper: DataPersistence<T>, item: T) where T : Decodable, T : Encodable, T : Equatable {
-        
+        loadCollections()
     }
     
     func didDeleteItem<T>(_ persistenceHelper: DataPersistence<T>, item: T) where T : Decodable, T : Encodable, T : Equatable {
-        
+        loadCollections()
     }
-    
      
 }

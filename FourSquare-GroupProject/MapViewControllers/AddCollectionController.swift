@@ -32,7 +32,7 @@ class AddCollectionController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coser:) has  not been implemented")
     }
-        
+    
     private let addCollectionView = AddCollectionView()
     
     private var collection: AlbumCollection?
@@ -67,24 +67,29 @@ class AddCollectionController: UIViewController {
         // guard
         print("pressed")
         print(addCollectionView.namingTextField.text ?? "Not working yet")
-    
+        
         let title = addCollectionView.namingTextField.text ?? "Not working yet"
         
-        //emptyVenue.append(venue)
-        
         let newItem = AlbumCollection(title: title, arrVenues: emptyVenue, image: nil)
-        
-//        do {
-//            try secondDataPer!.createItem(newItem)
-//        } catch {
-//            print("unable to save album")
-//        }
         
         delegate?.addGroup(collection: newItem)
         print(newItem.title)
         print(newItem.title)
         self.navigationController?.popViewController(animated: true)
+        createCollections(collection: newItem)
     }
+    
+    private func createCollections(collection: AlbumCollection)    {
+        do  {
+            try secondDataPer.createItem(collection)
+            print("success")
+        }
+        catch   {
+            
+            print("fail")
+        }
+    }
+    
     
 }
 
