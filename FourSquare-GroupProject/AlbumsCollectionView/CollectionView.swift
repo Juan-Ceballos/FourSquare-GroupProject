@@ -14,7 +14,7 @@ class CollectionView: UIView  {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .blue
+        collectionView.backgroundColor = .systemGroupedBackground
         return collectionView
     }()
     
