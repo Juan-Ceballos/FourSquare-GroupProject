@@ -12,7 +12,7 @@ import DataPersistence
 class TabBarController: UITabBarController  {
     
 
-    private var tabBarPersistance =  DataPersistence<Venue>(filename:"venue.plist")
+    private var tabBarPersistance =  DataPersistence<AlbumCollection>(filename:"venue.plist")
     private var venues = [Venue]()
 
     lazy var mapController: MapController =   {

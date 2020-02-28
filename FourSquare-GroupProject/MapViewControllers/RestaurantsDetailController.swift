@@ -19,10 +19,11 @@ class RestaurantsDetailController: UIViewController {
     
     private var restaurantDetailView = RestaurantsDetailView()
     
-    private var dataPersistence: DataPersistence<Venue>
+    private var dataPersistence: DataPersistence<AlbumCollection>
     private var selectedVenue: Venue
+    private var emptyArr : AlbumCollection?
     
-    init(_ dataPersistence: DataPersistence<Venue>, _ selectedVenue: Venue){
+    init(_ dataPersistence: DataPersistence<AlbumCollection>, _ selectedVenue: Venue){
         self.dataPersistence = dataPersistence
         
         self.selectedVenue = selectedVenue
@@ -83,7 +84,8 @@ class RestaurantsDetailController: UIViewController {
         request.destination = MKMapItem(placemark: MKPlacemark(coordinate: coordinate))
         request.transportType = .any
         let directions = MKDirections(request: request)
-        directions.calculate { [unowned self](response, error) in
+        directions.calculate { //[unowned self]
+            (response, error) in
             guard let unwrappedResponse = response else { return }
             for route in unwrappedResponse.routes {
                 self.restaurantDetailView.map.addOverlay(route.polyline)
@@ -94,28 +96,32 @@ class RestaurantsDetailController: UIViewController {
     
     @objc private func saveButtonPressed() {
         print("save pressed")
-        
-        if dataPersistence.hasItemBeenSaved(selectedVenue) {
-            showAlert(title: "Ooops!", message: "This place was already saved to your collections!")
-        } else {
-            do {
+//        if dataPersistence.hasItemBeenSaved(selectedVenue) {
+//            showAlert(title: "Ooops!", message: "This place was already saved to your collections!")
+//            return
+//        } else {
+//            do {
+                //emptyArr?.arrVenues.append(selectedVenue)
 
-                try dataPersistence.createItem(selectedVenue)
-                showAlert(title: "Yay!", message: "New Great Place was Saved to Your Collection!")
+//                try dataPersistence.createItem(selectedVenue)
+//                showAlert(title: "Yay!", message: "New Great Place was Saved to Your Collection!")
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
-                    self.dismiss(animated: true)
-                    let addCollVC = AddCollectionController(self.dataPersistence, venue: self.selectedVenue)
+              //  DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+                    dismiss(animated: true)
+                    let saveVenueVC = SaveVenueViewController(dataPersistence, selectedVenue)
+                   // let addCollVC = AddCollectionController(self.dataPersistence, venue: self.selectedVenue)
                     //              let adetailVC = UINavigationController(rootViewController: addCollVC)
                                    // present(adetailVC,animated: true)
                                   //present(adetailVC, animated: true)
-                    self.navigationController?.pushViewController(addCollVC, animated: true)
-                }
+                  //  self.navigationController?.pushViewController(addCollVC, animated: true)
+        present(saveVenueVC, animated: true)
+                 //   navigationController?.pushViewController(saveVenueVC, animated: true)
+              //  }
                 
-            } catch {
-                showAlert(title: "Error", message: "Sorry, we were unable to save this venue.")
-            }
-        }
+//            } catch {
+//                showAlert(title: "Error", message: "Sorry, we were unable to save this venue.")
+          //  }
+        
     }
     
     @objc private func deliveryButton(_ sender: UIButton) {
