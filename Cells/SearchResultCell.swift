@@ -101,7 +101,7 @@ class SearchResultsCell: UICollectionViewCell {
     public func configureCell(for venue: Venue) {
         currentVenue = venue
         venueNameLabel.text = venue.name
-        //venueCategoryLabel.text = venue.categories[0].shortName
+        venueCategoryLabel.text = venue.categories[0]?.shortName
      
         PhotoAPIClient.photoURL(venue: venue) { [weak self] (result) in
             switch result {
