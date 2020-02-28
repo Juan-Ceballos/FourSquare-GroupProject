@@ -7,16 +7,30 @@
 //
 
 import UIKit
+import DataPersistence
 
 class ACollectionController: UIViewController {
   
   private var aCollectionView = ACollectioniView()
+  
+  private var dataPersistence : DataPersistence<Venue>
   
   private var savedVenues = [Venue]() {
     didSet {
       self.aCollectionView.tableView.reloadData()
     }
   }
+  
+  init(_ dataPersistence: DataPersistence<Venue>, venue: [Venue]) {
+    self.dataPersistence = dataPersistence
+    savedVenues = venue
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder: ) has not been implemented")
+  }
+
   
   private var refreshController: UIRefreshControl!
   
