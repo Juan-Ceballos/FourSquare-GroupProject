@@ -10,6 +10,13 @@ import UIKit
 
 class AddCollectionView: UIView {
     
+    public lazy var createButton: UIButton =    {
+        let button = UIButton()
+        button.setTitle("Create", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        return button
+    }()
+    
     public lazy var namingTextField: UITextField  =  {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
@@ -30,7 +37,10 @@ class AddCollectionView: UIView {
     
     private func commonInit()   {
         setupNamingTextFieldConstraints()
+        setupCreateButtonConstraint()
     }
+    
+    
     
     private func setupNamingTextFieldConstraints()  {
         addSubview(namingTextField)
@@ -39,10 +49,22 @@ class AddCollectionView: UIView {
         
         NSLayoutConstraint.activate([
         
-            namingTextField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            namingTextField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 44),
             namingTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             namingTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8)
         
+        ])
+    }
+    
+    
+    private func setupCreateButtonConstraint()  {
+        addSubview(createButton)
+        createButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+        
+            createButton.topAnchor.constraint(equalTo: namingTextField.bottomAnchor, constant: 44),
+            createButton.centerXAnchor.constraint(equalTo: centerXAnchor)
+            
         ])
     }
 }
