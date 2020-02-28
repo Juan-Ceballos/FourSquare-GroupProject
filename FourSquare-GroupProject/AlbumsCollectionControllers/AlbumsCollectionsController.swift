@@ -11,8 +11,14 @@ import DataPersistence
 
 class AlbumsCollectionsController: UIViewController {
     
-    private let dp: DataPersistence<Venue>
-    init(_ dataPersistence:DataPersistence<Venue>) {
+    // didselect collection view, opens up venues
+    // saving new albumscollection, load {do catch} load data
+    //
+    
+    private let dp: DataPersistence<AlbumCollection>
+    private var secondDataPer = DataPersistence<AlbumCollection>(filename: "collection.plist")
+
+    init(_ dataPersistence:DataPersistence<AlbumCollection>) {
         self.dp = dataPersistence
         super.init(nibName: nil, bundle: nil)
     }
@@ -45,6 +51,15 @@ class AlbumsCollectionsController: UIViewController {
         
     }
     
+//    private func loadAlbulms()  {
+//        do  {
+//            //let data = try
+//        }
+//        catch   {
+//
+//        }
+    //}
+    
     private func configureNavBar()  {
         self.navigationItem.title = "My Collection"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(pressButton))
@@ -69,6 +84,8 @@ extension AlbumsCollectionsController: UICollectionViewDataSource  {
             else    {
                 fatalError()
         }
+        
+        cell.configureCellEmpty(for: collections[indexPath.row])
         cell.backgroundColor = .green
         return cell
     }
@@ -87,11 +104,39 @@ extension AlbumsCollectionsController: UICollectionViewDelegateFlowLayout    {
 //        return CGSize(width: itemWidth/2, height: itemWidth/1.5)
         
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("pressed")
+        //let albums = AlbumsCollectionsController(secondDataPer)
+        
+        let collection = collections[indexPath.row].arrVenues
+        
+        let aCollection = ACollectionController(secondDataPer, venue: collection)
+        
+        if collection.isEmpty  {
+            print("Empty")
+        }
+        //empty state
+        else    {
+            navigationController?.pushViewController(aCollection, animated: true)
+        }
+    }
 }
 
 extension AlbumsCollectionsController: AddCollectionGroupDelegate   {
     func addGroup(collection: AlbumCollection) {
         collections.append(collection)
     }
+}
 
+extension AlbumsCollectionsController: DataPersistenceDelegate  {
+    func didSaveItem<T>(_ persistenceHelper: DataPersistence<T>, item: T) where T : Decodable, T : Encodable, T : Equatable {
+        
+    }
+    
+    func didDeleteItem<T>(_ persistenceHelper: DataPersistence<T>, item: T) where T : Decodable, T : Encodable, T : Equatable {
+        
+    }
+    
+     
 }

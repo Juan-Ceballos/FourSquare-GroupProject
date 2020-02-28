@@ -20,11 +20,11 @@ class AddCollectionController: UIViewController {
     
     var venue: Venue!
     
-    private var dataPersistence: DataPersistence<Venue>
+    private var dataPersistence: DataPersistence<AlbumCollection>
     
-    private var secondDataPer: DataPersistence<AlbumCollection>?
+    private var secondDataPer = DataPersistence<AlbumCollection>(filename: "collections.plist")
     
-    init(_ dataPersistence:DataPersistence<Venue>, venue: Venue?) {
+    init(_ dataPersistence:DataPersistence<AlbumCollection>, venue: Venue?) {
         self.dataPersistence = dataPersistence
         self.venue = venue
         super.init(nibName: nil, bundle: nil)
@@ -67,44 +67,33 @@ class AddCollectionController: UIViewController {
         // guard
         print("pressed")
         print(addCollectionView.namingTextField.text ?? "Not working yet")
-        
-        
-        guard let makingSureSomethingIsThere = keyForCollection, keyForCollection != nil
-            else {
-            print("this is still empty")
-                return
-        }
-        
+    
         let title = addCollectionView.namingTextField.text ?? "Not working yet"
         
-        emptyVenue.append(venue)
+        //emptyVenue.append(venue)
         
         let newItem = AlbumCollection(title: title, arrVenues: emptyVenue, image: nil)
         
-        do {
-            try secondDataPer!.createItem(newItem)
-        } catch {
-            print("unable to save album")
-        }
+//        do {
+//            try secondDataPer!.createItem(newItem)
+//        } catch {
+//            print("unable to save album")
+//        }
         
         delegate?.addGroup(collection: newItem)
+        print(newItem.title)
+        print(newItem.title)
         self.navigationController?.popViewController(animated: true)
     }
     
-
 }
 
 extension AddCollectionController: UITextFieldDelegate  {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // notify if user if empty textfield
-        //keyForCollection = textField.text
-        guard let keyForCollection = textField.text, !keyForCollection.isEmpty
-            else    {
-                print("empty")
-                return false
-        }
         
         textField.resignFirstResponder()
         return true
     }
 }
+
