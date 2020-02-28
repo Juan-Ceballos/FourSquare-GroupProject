@@ -47,6 +47,7 @@ class MapController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 self.loadMap()
+                self.instanceOfMapView.foodCollectionView.reloadData()
             }
         }
     }
@@ -78,7 +79,7 @@ class MapController: UIViewController {
         // delegated for collection view
         instanceOfMapView.foodCollectionView.delegate = self
         instanceOfMapView.foodCollectionView.dataSource = self
-        instanceOfMapView.foodCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "venuesCell")
+        instanceOfMapView.foodCollectionView.register(mapCell.self, forCellWithReuseIdentifier: "venuesCell")
         
         mapView.delegate = self
         loadMap()
@@ -129,17 +130,18 @@ class MapController: UIViewController {
 // MARK: Collection DataSource
 extension MapController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return allVenues.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "venuesCell", for: indexPath) as? UICollectionViewCell
-      //  let venues = collectionView[indexPath.row]
-       // cell.
+       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "venuesCell", for: indexPath) as? mapCell else {
+            fatalError("cell doesnt work")
+        }
+        let venue = allVenues[indexPath.row]
         
-        cell!.backgroundColor = .white
+        cell.configureCell(for: venue)
         
-        return cell!
+        return cell
     }
     
     
@@ -147,7 +149,17 @@ extension MapController: UICollectionViewDataSource{
 
 //MARK: DelegateFlowLayout
 extension MapController: UICollectionViewDelegateFlowLayout{
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+           // this is where you return the actual size of the cell.
+           let maxSize: CGSize = UIScreen.main.bounds.size
+           let itemWidth: CGFloat = maxSize.width
+           // MARK: this is to change the height of the cell
+           let itemHeight: CGFloat = maxSize.height * 0.20 // make it 30%
+           return CGSize(width: itemWidth, height: itemHeight)
+       }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+    }
 }
 
 
