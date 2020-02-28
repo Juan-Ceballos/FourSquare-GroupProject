@@ -65,9 +65,12 @@ class MapView: UIView {
     
     public lazy var foodCollectionView: UICollectionView =  {
         let layout = UICollectionViewFlowLayout()
+        
         layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 10, height: 10)
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .systemIndigo
+        
+        collectionView.backgroundColor = .clear
         return collectionView
     }()
         
@@ -86,8 +89,6 @@ class MapView: UIView {
     @objc func buttonSegue(_ sender: UIButton) {
     
         delegate?.listenForButtonPressed(self, venues: venues)
-
-        
     }
     
     
@@ -112,6 +113,7 @@ class MapView: UIView {
         }
        //reloadTheAnnotations()
     }
+    
     
 //    private func reloadTheAnnotations() {
 //        let controller = MapController()
@@ -154,13 +156,13 @@ class MapView: UIView {
         foodCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            
-            foodCollectionView.topAnchor.constraint(equalTo: searchTheArea.bottomAnchor, constant: 550),
+          //  foodCollectionView.topAnchor.constraint(equalTo: searchTheArea.bottomAnchor, constant: 550)
+            foodCollectionView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.10) ,
             foodCollectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
             foodCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             foodCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
-            
         ])
+        
     }
     
     private func setupAvenueMapView()   {

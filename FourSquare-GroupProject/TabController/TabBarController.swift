@@ -31,6 +31,6 @@ class TabBarController: UITabBarController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewControllers = [mapController, UINavigationController(rootViewController: collectionController)]
+        viewControllers = [UINavigationController(rootViewController:mapController), UINavigationController(rootViewController: collectionController)]
     }
 }
