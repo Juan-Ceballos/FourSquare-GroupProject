@@ -11,7 +11,7 @@ import DataPersistence
 
 class ResultsOfSearchController: UIViewController {
     
-    let dataPersistence: DataPersistence<Venue>
+    let dataPersistence: DataPersistence<AlbumCollection>
 
     private let searchResultView = SearchResultsView()
     private var searchResults = [Venue]() {
@@ -22,7 +22,7 @@ class ResultsOfSearchController: UIViewController {
         }
     }
     
-    init(_ dataPersistence:DataPersistence<Venue>, _ venues: [Venue]) {
+    init(_ dataPersistence:DataPersistence<AlbumCollection>, _ venues: [Venue]) {
         self.dataPersistence = dataPersistence
         searchResults = venues
         super.init(nibName: nil, bundle: nil)
@@ -80,8 +80,8 @@ extension ResultsOfSearchController: UICollectionViewDelegateFlowLayout {
         let selectedVenue = searchResults[indexPath.row]
         
         let detailVC = RestaurantsDetailController(dataPersistence, selectedVenue)
-        let adetailVC = UINavigationController(rootViewController: detailVC)
-        present(adetailVC,animated: true)
-       // navigationController?.pushViewController(adetailVC, animated: true)
+       // let adetailVC = UINavigationController(rootViewController: detailVC)
+        //present(adetailVC,animated: true)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }

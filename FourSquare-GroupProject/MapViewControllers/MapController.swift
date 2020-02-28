@@ -16,8 +16,8 @@ class MapController: UIViewController {
     
     private let locationSession = CoreLocationSession()
     
-    private let dp: DataPersistence<Venue>
-      init(_ dataPersistence:DataPersistence<Venue>) {
+    private let dp: DataPersistence<AlbumCollection>
+      init(_ dataPersistence:DataPersistence<AlbumCollection>) {
           self.dp = dataPersistence
           super.init(nibName: nil, bundle: nil)
       }
