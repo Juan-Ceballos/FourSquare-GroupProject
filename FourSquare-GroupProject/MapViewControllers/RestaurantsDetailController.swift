@@ -16,7 +16,7 @@ class RestaurantsDetailController: UIViewController {
     private let locationSession = CoreLocationSession()
     private var annotation = MKPointAnnotation()
     private var isShowingNewAnnotations = false
-
+    
     private var restaurantDetailView = RestaurantsDetailView()
     
     private var dataPersistence: DataPersistence<Venue>
@@ -24,21 +24,23 @@ class RestaurantsDetailController: UIViewController {
     
     init(_ dataPersistence: DataPersistence<Venue>, _ selectedVenue: Venue){
         self.dataPersistence = dataPersistence
+        
         self.selectedVenue = selectedVenue
         super.init(nibName: nil, bundle: nil)
-
+        self.dataPersistence.delegate = self
     }
-
+    
     required init(coder: NSCoder) {
         fatalError("init(coser:) has  not been implemented")
     }
     
     override func loadView() {
-       
+        
         view = restaurantDetailView
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         restaurantDetailView.map.showsUserLocation = true
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(saveButtonPressed))
@@ -62,7 +64,7 @@ class RestaurantsDetailController: UIViewController {
     }
     
     private func makeAnnotation(for venue: Venue) -> MKPointAnnotation {
-       selectedVenue = venue
+        selectedVenue = venue
         let annotation = MKPointAnnotation()
         
         let coordinate = CLLocationCoordinate2D(latitude: venue.location.lat, longitude: venue.location.lng)
@@ -100,7 +102,7 @@ class RestaurantsDetailController: UIViewController {
                 try dataPersistence.createItem(selectedVenue)
                 showAlert(title: "Yay!", message: "New Great Place was Saved to Your Collection!")
             } catch {
-            showAlert(title: "Error", message: "Sorry, we were unable to save this venue.")
+                showAlert(title: "Error", message: "Sorry, we were unable to save this venue.")
             }
         }
     }
@@ -114,14 +116,13 @@ class RestaurantsDetailController: UIViewController {
         present(safariVC, animated: true)
     }
     
-
+    
     private func updateUI() {
-        //let fullAddress = "\(selectedVenue.location.formattedAddress[0])\n\(selectedVenue.location.formattedAddress[1]), \(selectedVenue.location.formattedAddress[2])"
         
         restaurantDetailView.venueNameLabel.text = selectedVenue.name
-        restaurantDetailView.venueAddressLabel.text = selectedVenue.location.formattedAddress.joined(separator: ",")
-        /*
-        PhotoAPIClient.photoURL(venueID: selectedVenue.id) { [weak self] (result) in
+        restaurantDetailView.venueAddressLabel.text = selectedVenue.location.formattedAddress.joined(separator: ", ")
+        
+        PhotoAPIClient.photoURL(venue: selectedVenue) { [weak self] (result) in
             switch result {
             case .failure:
                 DispatchQueue.main.async {
@@ -140,9 +141,9 @@ class RestaurantsDetailController: UIViewController {
                 }
             }
         }
-        */
+        
     }
-
+    
 }
 
 extension UIViewController {
@@ -170,20 +171,38 @@ extension RestaurantsDetailController: MKMapViewDelegate {
             
         } else {
             annotationView?.annotation = annotation
+           // annotationView?.canShowCallout = true
         }
         return annotationView
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-           let renderer = MKPolylineRenderer(polyline: overlay as! MKPolyline)
-           renderer.strokeColor = UIColor.blue
-           return renderer
-       }
-
-func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
-    if isShowingNewAnnotations {
-        restaurantDetailView.map.showAnnotations([annotation], animated: false)
+        let renderer = MKPolylineRenderer(polyline: overlay as! MKPolyline)
+        // renderer.fillColor = UIColor.black.withAlphaComponent(0.5)
+        renderer.strokeColor = UIColor.systemBlue
+        
+        renderer.lineWidth = 3.0
+        
+        // renderer.lineDashPattern = [10]
+        
+        return renderer
     }
-    isShowingNewAnnotations = false
+    
+    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+        if isShowingNewAnnotations {
+            restaurantDetailView.map.showAnnotations([annotation], animated: false)
+        }
+        isShowingNewAnnotations = false
+    }
 }
+extension RestaurantsDetailController: DataPersistenceDelegate {
+    func didSaveItem<T>(_ persistenceHelper: DataPersistence<T>, item: T) where T : Decodable, T : Encodable, T : Equatable {
+        updateUI()
+    }
+    
+    func didDeleteItem<T>(_ persistenceHelper: DataPersistence<T>, item: T) where T : Decodable, T : Encodable, T : Equatable {
+        updateUI()
+    }
+    
+    
 }

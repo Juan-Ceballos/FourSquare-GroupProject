@@ -81,6 +81,7 @@ extension ResultsOfSearchController: UICollectionViewDelegateFlowLayout {
         
         let detailVC = RestaurantsDetailController(dataPersistence, selectedVenue)
         let adetailVC = UINavigationController(rootViewController: detailVC)
-        navigationController?.pushViewController(adetailVC, animated: true)
+        present(adetailVC,animated: true)
+       // navigationController?.pushViewController(adetailVC, animated: true)
     }
 }

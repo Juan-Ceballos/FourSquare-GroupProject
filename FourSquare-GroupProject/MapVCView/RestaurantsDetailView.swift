@@ -47,7 +47,9 @@ class RestaurantsDetailView: UIView {
 //        button.titleLabel?.textColor = .black
         button.layer.cornerRadius = 5
         button.backgroundColor = .systemRed
-        button.setTitle("Delivery", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+       button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.setTitle("Deliver Me", for: .normal)
         return button
     }()
     
