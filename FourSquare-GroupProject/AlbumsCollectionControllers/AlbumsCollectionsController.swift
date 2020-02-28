@@ -20,8 +20,15 @@ class AlbumsCollectionsController: UIViewController {
         fatalError("init(coser:) has  not been implemented")
     }
 
+    //passing collection name, 0 venues
     let collectionView = CollectionView()
-    var collections = [String]()
+    
+    // make a singleton
+    var collections = [AlbumCollection](){
+        didSet{
+            collectionView.collections.reloadData()
+        }
+    }
     
     override func loadView() {
         view = collectionView
@@ -34,6 +41,8 @@ class AlbumsCollectionsController: UIViewController {
         collectionView.collections.dataSource = self
         collectionView.collections.delegate = self
         configureNavBar()
+        
+        
     }
     
     private func configureNavBar()  {
@@ -42,15 +51,16 @@ class AlbumsCollectionsController: UIViewController {
     }
     
     @objc private func pressButton()  {
-        let addCollectionController = AddCollectionController()
+        let addCollectionController = AddCollectionController(dp, venue: nil)
         navigationController?.pushViewController(addCollectionController, animated: true)
+        addCollectionController.delegate = self
     }
     
 }
 
 extension AlbumsCollectionsController: UICollectionViewDataSource  {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        collections.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -77,4 +87,11 @@ extension AlbumsCollectionsController: UICollectionViewDelegateFlowLayout    {
 //        return CGSize(width: itemWidth/2, height: itemWidth/1.5)
         
     }
+}
+
+extension AlbumsCollectionsController: AddCollectionGroupDelegate   {
+    func addGroup(collection: AlbumCollection) {
+        collections.append(collection)
+    }
+
 }

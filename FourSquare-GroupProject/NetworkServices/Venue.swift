@@ -51,3 +51,9 @@ struct Provider: Codable & Equatable{
     let name: String
     //let icon: ProviderIcon
 }
+
+struct AlbumCollection : Codable & Equatable {
+    let title: String
+    var arrVenues = [Venue]()
+    let image: Photos?
+}
