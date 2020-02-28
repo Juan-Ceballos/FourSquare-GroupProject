@@ -75,4 +75,20 @@ extension ACollectionController : UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 1
   }
+  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      deleteSavedVenue(atIndexPath: indexPath)
+    }
+
+  }
+  
+  private func deleteSavedVenue(atIndexPath indexPath: IndexPath) {
+    // remove from saved venues array
+    savedVenues.remove(at: indexPath.row)
+    // remove from tableview
+    aCollectionView.tableView.deleteRows(at: [indexPath], with: .fade)
+  }
+  
+  
 }
