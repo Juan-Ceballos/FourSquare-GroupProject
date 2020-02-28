@@ -13,7 +13,7 @@ class ACollectioniView : UIView {
   
   public lazy var tableView : UITableView = {
     let tableView = UITableView()
-    tableView.backgroundColor = .cyan
+//    tableView.backgroundColor = .cyan
     tableView.separatorColor = .black
     tableView.rowHeight = 125
     return tableView
