@@ -13,7 +13,7 @@ class ACollectionController: UIViewController {
   
   private var aCollectionView = ACollectioniView()
   
-  private var dataPersistence : DataPersistence<Venue>
+  private var dataPersistence : DataPersistence<AlbumCollection>
   
   private var savedVenues = [Venue]() {
     didSet {
@@ -21,7 +21,7 @@ class ACollectionController: UIViewController {
     }
   }
   
-  init(_ dataPersistence: DataPersistence<Venue>, venue: [Venue]) {
+  init(_ dataPersistence: DataPersistence<AlbumCollection>, venue: [Venue]) {
     self.dataPersistence = dataPersistence
     savedVenues = venue
     super.init(nibName: nil, bundle: nil)
