@@ -60,26 +60,27 @@ class MapController: UIViewController {
           // instanceOfMapView.addSubview(userTrackingButton)
       //  userTrackingButton.mapView = instanceOfMapView.avenueMapView
            // what does this line mean
-        instanceOfMapView.foodCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "venuesCell")
+        
            
         // MARK: how to dismiss keyboard when user touchs screen
     
-        // delegeate for the map
+        // stuff for the map
         instanceOfMapView.actualMapView.delegate = self
+        // access to user location
+        instanceOfMapView.actualMapView.showsUserLocation = true
+        //  weak var delegate = instanceOfMapView
+           instanceOfMapView.delegate = self
         
-           // set the delegates for both of the text fields...
+        // set the delegates for both of the text fields...
            instanceOfMapView.searchTheArea.delegate = self
            instanceOfMapView.searchTheKindOfFood.delegate = self
         
-        // access to user location
-        instanceOfMapView.actualMapView.showsUserLocation = true
-        
-//        weak var delegate = instanceOfMapView
-        instanceOfMapView.delegate = self
-        
         // delegated for collection view
         instanceOfMapView.foodCollectionView.delegate = self
-      mapView.delegate = self
+        instanceOfMapView.foodCollectionView.dataSource = self
+        instanceOfMapView.foodCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "venuesCell")
+        
+        mapView.delegate = self
         loadMap()
    
     }
@@ -128,14 +129,17 @@ class MapController: UIViewController {
 // MARK: Collection DataSource
 extension MapController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allVenues.count
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "venuesCell", for: indexPath)
-        cell.backgroundColor = .white
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "venuesCell", for: indexPath) as? UICollectionViewCell
+      //  let venues = collectionView[indexPath.row]
+       // cell.
         
-        return cell
+        cell!.backgroundColor = .white
+        
+        return cell!
     }
     
     
@@ -157,7 +161,6 @@ extension MapController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         print("textFieldDidChangeSelection")
-        
         
 //        guard instanceOfMapView.searchTheKindOfFood.text!.isEmpty || instanceOfMapView.searchTheArea.text!.isEmpty else {
 //            print("the values of this are now found to be empty.")
@@ -226,7 +229,6 @@ extension MapController: MKMapViewDelegate {
         print("the users location can NOW be found - mapViewWillStartLocatingUser")
     }
     
-    
 }
 
 // extension for the pressed button
@@ -240,10 +242,13 @@ extension MapController: SearchDelegate {
         
         let instance = ResultsOfSearchController(dp, searchedVenues)
         
-        present(instance,animated: true)
+      //  present(instance,animated: true)
        // push(instance, animated: true)
 
-      //  UINavigationController.pushViewController(instance)
+        //UINavigationController.pushViewController(rootViewContrller: instance)
+//        let thing = UINavigationController.init(rootViewController: instance)
+//        navigationController?.pushViewController(thing, animated: true)
+               navigationController?.pushViewController(instance, animated: true)
     }
+    
 }
-

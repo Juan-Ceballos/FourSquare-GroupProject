@@ -86,8 +86,6 @@ class MapView: UIView {
     @objc func buttonSegue(_ sender: UIButton) {
     
         delegate?.listenForButtonPressed(self, venues: venues)
-
-        
     }
     
     
@@ -112,6 +110,7 @@ class MapView: UIView {
         }
        //reloadTheAnnotations()
     }
+    
     
 //    private func reloadTheAnnotations() {
 //        let controller = MapController()
@@ -154,13 +153,12 @@ class MapView: UIView {
         foodCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            
             foodCollectionView.topAnchor.constraint(equalTo: searchTheArea.bottomAnchor, constant: 550),
             foodCollectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
             foodCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             foodCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
-            
         ])
+        
     }
     
     private func setupAvenueMapView()   {
