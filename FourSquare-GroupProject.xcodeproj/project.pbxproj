@@ -7,17 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E90A2702407061F0082D5C7 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E90A26F2407061F0082D5C7 /* SearchResultCell.swift */; };
+		3EA0DEA62401E41300ACF1F8 /* CoreLocationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA0DEA52401E41300ACF1F8 /* CoreLocationSession.swift */; };
+		3EA4B2B5240096D9003C2EC4 /* RestaurantsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2B4240096D9003C2EC4 /* RestaurantsDetailView.swift */; };
+		3EA4B2B7240096EC003C2EC4 /* AddCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2B6240096EC003C2EC4 /* AddCollectionView.swift */; };
+		3EA4B2B924009701003C2EC4 /* ResultsOfSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2B824009701003C2EC4 /* ResultsOfSearchView.swift */; };
+		3EA4B2BB24009729003C2EC4 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2BA24009729003C2EC4 /* CollectionView.swift */; };
+		3EA4B2BD24009737003C2EC4 /* ACollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2BC24009737003C2EC4 /* ACollectionView.swift */; };
+		3EA4B2C3240097DA003C2EC4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2C2240097DA003C2EC4 /* TabBarController.swift */; };
+		3EA4B2C524009B77003C2EC4 /* FourSquareAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2C424009B77003C2EC4 /* FourSquareAPIClient.swift */; };
+		3EA4B2C724009B89003C2EC4 /* PhotoAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2C624009B89003C2EC4 /* PhotoAPIClient.swift */; };
+		3EA4B2C924009E2C003C2EC4 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2C824009E2C003C2EC4 /* MapController.swift */; };
+		3EA4B2CB24009E73003C2EC4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2CA24009E73003C2EC4 /* MapView.swift */; };
+		3EDE29FA24046D3400F6B888 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE29F924046D3400F6B888 /* Photo.swift */; };
+		3EDE29FC24046D3D00F6B888 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE29FB24046D3D00F6B888 /* Venue.swift */; };
 		3EE2A2272400744D0064828A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A2262400744D0064828A /* AppDelegate.swift */; };
 		3EE2A2292400744D0064828A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A2282400744D0064828A /* SceneDelegate.swift */; };
 		3EE2A2302400744D0064828A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2A22F2400744D0064828A /* Assets.xcassets */; };
 		3EE2A2332400744D0064828A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2A2312400744D0064828A /* LaunchScreen.storyboard */; };
 		3EE2A23E2400744D0064828A /* FourSquare_GroupProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A23D2400744D0064828A /* FourSquare_GroupProjectTests.swift */; };
-		3EE2A24D240074BA0064828A /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3EE2A24C240074BA0064828A /* ImageKit */; };
 		3EE2A253240075840064828A /* AddCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A252240075840064828A /* AddCollectionController.swift */; };
-		3EE2A25A2400795C0064828A /* CollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A2592400795C0064828A /* CollectionController.swift */; };
+		3EE2A25A2400795C0064828A /* AlbumsCollectionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A2592400795C0064828A /* AlbumsCollectionsController.swift */; };
 		3EE2A25C240079B00064828A /* ACollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A25B240079B00064828A /* ACollectionController.swift */; };
 		3EE2A26024007AAE0064828A /* RestaurantsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A25F24007AAD0064828A /* RestaurantsDetailController.swift */; };
 		3EE2A26224007AFB0064828A /* ResultsOfSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2A26124007AFB0064828A /* ResultsOfSearchController.swift */; };
+		550D4FE5240896C0007C6435 /* mapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550D4FE4240896C0007C6435 /* mapCell.swift */; };
+		552B32D324047188007621AB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B32D224047188007621AB /* Config.swift */; };
+		58202DB02408421000054A9B /* ACollectionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58202DAF2408421000054A9B /* ACollectionTableCell.swift */; };
+		8D4F3EC32409B18E002A347F /* SaveVenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F3EC22409B18E002A347F /* SaveVenueViewController.swift */; };
+		8D4F3EC52409B1C6002A347F /* SaveVenueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F3EC42409B1C6002A347F /* SaveVenueView.swift */; };
+		8DCC8EDF24087DE500222C0A /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8DCC8EDE24087DE500222C0A /* ImageKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +50,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E90A26F2407061F0082D5C7 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		3EA0DEA52401E41300ACF1F8 /* CoreLocationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationSession.swift; sourceTree = "<group>"; };
+		3EA4B2B4240096D9003C2EC4 /* RestaurantsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsDetailView.swift; sourceTree = "<group>"; };
+		3EA4B2B6240096EC003C2EC4 /* AddCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionView.swift; sourceTree = "<group>"; };
+		3EA4B2B824009701003C2EC4 /* ResultsOfSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsOfSearchView.swift; sourceTree = "<group>"; };
+		3EA4B2BA24009729003C2EC4 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		3EA4B2BC24009737003C2EC4 /* ACollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACollectionView.swift; sourceTree = "<group>"; };
+		3EA4B2C2240097DA003C2EC4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		3EA4B2C424009B77003C2EC4 /* FourSquareAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareAPIClient.swift; sourceTree = "<group>"; };
+		3EA4B2C624009B89003C2EC4 /* PhotoAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAPIClient.swift; sourceTree = "<group>"; };
+		3EA4B2C824009E2C003C2EC4 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		3EA4B2CA24009E73003C2EC4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		3EDE29F924046D3400F6B888 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		3EDE29FB24046D3D00F6B888 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		3EE2A2232400744C0064828A /* FourSquare-GroupProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FourSquare-GroupProject.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE2A2262400744D0064828A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EE2A2282400744D0064828A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,10 +74,15 @@
 		3EE2A23D2400744D0064828A /* FourSquare_GroupProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquare_GroupProjectTests.swift; sourceTree = "<group>"; };
 		3EE2A23F2400744D0064828A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EE2A252240075840064828A /* AddCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionController.swift; sourceTree = "<group>"; };
-		3EE2A2592400795C0064828A /* CollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionController.swift; sourceTree = "<group>"; };
+		3EE2A2592400795C0064828A /* AlbumsCollectionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCollectionsController.swift; sourceTree = "<group>"; };
 		3EE2A25B240079B00064828A /* ACollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACollectionController.swift; sourceTree = "<group>"; };
 		3EE2A25F24007AAD0064828A /* RestaurantsDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsDetailController.swift; sourceTree = "<group>"; };
 		3EE2A26124007AFB0064828A /* ResultsOfSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsOfSearchController.swift; sourceTree = "<group>"; };
+		550D4FE4240896C0007C6435 /* mapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapCell.swift; sourceTree = "<group>"; };
+		552B32D224047188007621AB /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		58202DAF2408421000054A9B /* ACollectionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACollectionTableCell.swift; sourceTree = "<group>"; };
+		8D4F3EC22409B18E002A347F /* SaveVenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveVenueViewController.swift; sourceTree = "<group>"; };
+		8D4F3EC42409B1C6002A347F /* SaveVenueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveVenueView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EE2A24D240074BA0064828A /* ImageKit in Frameworks */,
+				8DCC8EDF24087DE500222C0A /* ImageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,9 +104,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E90A26E240705FC0082D5C7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3E90A26F2407061F0082D5C7 /* SearchResultCell.swift */,
+				58202DAF2408421000054A9B /* ACollectionTableCell.swift */,
+				550D4FE4240896C0007C6435 /* mapCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3EA0DEA42401E3DA00ACF1F8 /* LocationServices */ = {
+			isa = PBXGroup;
+			children = (
+				3EA0DEA52401E41300ACF1F8 /* CoreLocationSession.swift */,
+			);
+			path = LocationServices;
+			sourceTree = "<group>";
+		};
+		3EA4B2B224009667003C2EC4 /* AlbumsCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				3EA4B2BA24009729003C2EC4 /* CollectionView.swift */,
+				3EA4B2BC24009737003C2EC4 /* ACollectionView.swift */,
+			);
+			path = AlbumsCollectionView;
+			sourceTree = "<group>";
+		};
+		3EA4B2B324009681003C2EC4 /* MapVCView */ = {
+			isa = PBXGroup;
+			children = (
+				3EA4B2CA24009E73003C2EC4 /* MapView.swift */,
+				3EA4B2B824009701003C2EC4 /* ResultsOfSearchView.swift */,
+				3EA4B2B4240096D9003C2EC4 /* RestaurantsDetailView.swift */,
+				3EA4B2B6240096EC003C2EC4 /* AddCollectionView.swift */,
+				8D4F3EC42409B1C6002A347F /* SaveVenueView.swift */,
+			);
+			path = MapVCView;
+			sourceTree = "<group>";
+		};
+		3EA4B2C024009773003C2EC4 /* NetworkServices */ = {
+			isa = PBXGroup;
+			children = (
+				3EA4B2C424009B77003C2EC4 /* FourSquareAPIClient.swift */,
+				3EA4B2C624009B89003C2EC4 /* PhotoAPIClient.swift */,
+				3EDE29F924046D3400F6B888 /* Photo.swift */,
+				3EDE29FB24046D3D00F6B888 /* Venue.swift */,
+			);
+			path = NetworkServices;
+			sourceTree = "<group>";
+		};
+		3EA4B2C1240097AA003C2EC4 /* TabController */ = {
+			isa = PBXGroup;
+			children = (
+				3EA4B2C2240097DA003C2EC4 /* TabBarController.swift */,
+			);
+			path = TabController;
+			sourceTree = "<group>";
+		};
 		3EE2A21A2400744C0064828A = {
 			isa = PBXGroup;
 			children = (
+				3E90A26E240705FC0082D5C7 /* Cells */,
+				552B32D224047188007621AB /* Config.swift */,
 				3EE2A2252400744C0064828A /* FourSquare-GroupProject */,
 				3EE2A23C2400744D0064828A /* FourSquare-GroupProjectTests */,
 				3EE2A2242400744C0064828A /* Products */,
@@ -87,8 +185,11 @@
 		3EE2A2252400744C0064828A /* FourSquare-GroupProject */ = {
 			isa = PBXGroup;
 			children = (
-				3EE2A26324007C440064828A /* AlbumsViews */,
-				3EE2A24A240074980064828A /* MapVCViews */,
+				3EA0DEA42401E3DA00ACF1F8 /* LocationServices */,
+				3EA4B2C1240097AA003C2EC4 /* TabController */,
+				3EA4B2C024009773003C2EC4 /* NetworkServices */,
+				3EA4B2B324009681003C2EC4 /* MapVCView */,
+				3EA4B2B224009667003C2EC4 /* AlbumsCollectionView */,
 				3EE2A2492400748C0064828A /* MapViewControllers */,
 				3EE2A24F240075420064828A /* AlbumsCollectionControllers */,
 				3EE2A248240074540064828A /* Supporting Files */,
@@ -120,34 +221,22 @@
 		3EE2A2492400748C0064828A /* MapViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3EE2A25F24007AAD0064828A /* RestaurantsDetailController.swift */,
-				3EE2A252240075840064828A /* AddCollectionController.swift */,
+				3EA4B2C824009E2C003C2EC4 /* MapController.swift */,
 				3EE2A26124007AFB0064828A /* ResultsOfSearchController.swift */,
+				3EE2A25F24007AAD0064828A /* RestaurantsDetailController.swift */,
+				8D4F3EC22409B18E002A347F /* SaveVenueViewController.swift */,
+				3EE2A252240075840064828A /* AddCollectionController.swift */,
 			);
 			path = MapViewControllers;
-			sourceTree = "<group>";
-		};
-		3EE2A24A240074980064828A /* MapVCViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MapVCViews;
 			sourceTree = "<group>";
 		};
 		3EE2A24F240075420064828A /* AlbumsCollectionControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3EE2A2592400795C0064828A /* CollectionController.swift */,
+				3EE2A2592400795C0064828A /* AlbumsCollectionsController.swift */,
 				3EE2A25B240079B00064828A /* ACollectionController.swift */,
 			);
 			path = AlbumsCollectionControllers;
-			sourceTree = "<group>";
-		};
-		3EE2A26324007C440064828A /* AlbumsViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AlbumsViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,7 +256,7 @@
 			);
 			name = "FourSquare-GroupProject";
 			packageProductDependencies = (
-				3EE2A24C240074BA0064828A /* ImageKit */,
+				8DCC8EDE24087DE500222C0A /* ImageKit */,
 			);
 			productName = "FourSquare-GroupProject";
 			productReference = 3EE2A2232400744C0064828A /* FourSquare-GroupProject.app */;
@@ -220,7 +309,7 @@
 			);
 			mainGroup = 3EE2A21A2400744C0064828A;
 			packageReferences = (
-				3EE2A24B240074BA0064828A /* XCRemoteSwiftPackageReference "ImageKit" */,
+				8DCC8EDD24087DE500222C0A /* XCRemoteSwiftPackageReference "ImageKit" */,
 			);
 			productRefGroup = 3EE2A2242400744C0064828A /* Products */;
 			projectDirPath = "";
@@ -256,13 +345,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EA4B2C924009E2C003C2EC4 /* MapController.swift in Sources */,
+				3EA4B2B5240096D9003C2EC4 /* RestaurantsDetailView.swift in Sources */,
+				3EA0DEA62401E41300ACF1F8 /* CoreLocationSession.swift in Sources */,
+				3EA4B2C3240097DA003C2EC4 /* TabBarController.swift in Sources */,
+				3EDE29FA24046D3400F6B888 /* Photo.swift in Sources */,
+				3EA4B2C724009B89003C2EC4 /* PhotoAPIClient.swift in Sources */,
+				550D4FE5240896C0007C6435 /* mapCell.swift in Sources */,
+				8D4F3EC52409B1C6002A347F /* SaveVenueView.swift in Sources */,
+				3EA4B2B7240096EC003C2EC4 /* AddCollectionView.swift in Sources */,
 				3EE2A253240075840064828A /* AddCollectionController.swift in Sources */,
-				3EE2A25A2400795C0064828A /* CollectionController.swift in Sources */,
+				3EA4B2C524009B77003C2EC4 /* FourSquareAPIClient.swift in Sources */,
+				3EDE29FC24046D3D00F6B888 /* Venue.swift in Sources */,
+				3EE2A25A2400795C0064828A /* AlbumsCollectionsController.swift in Sources */,
+				3EA4B2BD24009737003C2EC4 /* ACollectionView.swift in Sources */,
+				3EA4B2CB24009E73003C2EC4 /* MapView.swift in Sources */,
 				3EE2A26224007AFB0064828A /* ResultsOfSearchController.swift in Sources */,
+				552B32D324047188007621AB /* Config.swift in Sources */,
 				3EE2A2272400744D0064828A /* AppDelegate.swift in Sources */,
+				3EA4B2B924009701003C2EC4 /* ResultsOfSearchView.swift in Sources */,
 				3EE2A26024007AAE0064828A /* RestaurantsDetailController.swift in Sources */,
+				58202DB02408421000054A9B /* ACollectionTableCell.swift in Sources */,
 				3EE2A25C240079B00064828A /* ACollectionController.swift in Sources */,
+				3EA4B2BB24009729003C2EC4 /* CollectionView.swift in Sources */,
+				3E90A2702407061F0082D5C7 /* SearchResultCell.swift in Sources */,
 				3EE2A2292400744D0064828A /* SceneDelegate.swift in Sources */,
+				8D4F3EC32409B18E002A347F /* SaveVenueViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +523,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6UA5RNM528;
+				DEVELOPMENT_TEAM = CNV924Q9C2;
 				INFOPLIST_FILE = "FourSquare-GroupProject/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -433,7 +541,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6UA5RNM528;
+				DEVELOPMENT_TEAM = CNV924Q9C2;
 				INFOPLIST_FILE = "FourSquare-GroupProject/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -523,20 +631,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3EE2A24B240074BA0064828A /* XCRemoteSwiftPackageReference "ImageKit" */ = {
+		8DCC8EDD24087DE500222C0A /* XCRemoteSwiftPackageReference "ImageKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alexpaul/ImageKit";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.4;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3EE2A24C240074BA0064828A /* ImageKit */ = {
+		8DCC8EDE24087DE500222C0A /* ImageKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3EE2A24B240074BA0064828A /* XCRemoteSwiftPackageReference "ImageKit" */;
+			package = 8DCC8EDD24087DE500222C0A /* XCRemoteSwiftPackageReference "ImageKit" */;
 			productName = ImageKit;
 		};
 /* End XCSwiftPackageProductDependency section */
