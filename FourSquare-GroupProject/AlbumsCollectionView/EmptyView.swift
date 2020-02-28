@@ -13,7 +13,6 @@ class EmptyView: UIView {
   public lazy var titleLabel : UILabel = {
     let label = UILabel()
     label.text = "Title Label"
-    label.backgroundColor = .systemOrange
     label.textAlignment = .center
     label.numberOfLines = 0
     label.font = UIFont.preferredFont(forTextStyle: .headline)
@@ -23,7 +22,6 @@ class EmptyView: UIView {
   public lazy var subtitleLabel : UILabel = {
     let label = UILabel()
     label.text = "subheader Label"
-    label.backgroundColor = .systemOrange
     label.textAlignment = .center
     label.numberOfLines = 0
     label.font = UIFont.preferredFont(forTextStyle: .subheadline)

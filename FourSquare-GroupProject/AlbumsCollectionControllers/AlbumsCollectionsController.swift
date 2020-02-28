@@ -33,6 +33,11 @@ class AlbumsCollectionsController: UIViewController {
     var collections = [AlbumCollection](){
         didSet{
             collectionView.collections.reloadData()
+          if collections.isEmpty {
+            collectionView.collections.backgroundView = EmptyView(title: "Empty", message: "Please add to fill")
+          } else {
+            collectionView.collections.backgroundView = nil
+          }
         }
     }
     
@@ -121,6 +126,8 @@ extension AlbumsCollectionsController: UICollectionViewDelegateFlowLayout    {
         
         if collection.isEmpty  {
             print("Empty")
+          navigationController?.pushViewController(aCollection, animated: true)
+
         }
         //empty state
         else    {
