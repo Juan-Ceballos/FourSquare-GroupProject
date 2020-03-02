@@ -15,8 +15,11 @@ class RestaurantsDetailView: UIView {
     public lazy var venueImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "photo.fill")
-        image.contentMode = .scaleAspectFill
-        image.clipsToBounds = true 
+        image.contentMode = .scaleAspectFit
+        image.layer.cornerRadius = 20
+        
+        image.layer.masksToBounds = true
+       // image.clipsToBounds = true
         return image
         
     }()
@@ -83,10 +86,10 @@ class RestaurantsDetailView: UIView {
         addSubview(venueImage)
     venueImage.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-        venueImage.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+        venueImage.topAnchor.constraint(equalTo: topAnchor, constant: 90),
         venueImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
         venueImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-        venueImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier:  0.40)
+        venueImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier:  0.35)
     ])
     }
     
@@ -126,7 +129,7 @@ class RestaurantsDetailView: UIView {
         deliveryButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             deliveryButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            deliveryButton.topAnchor.constraint(equalTo: venueAddressLabel.bottomAnchor, constant: 30)
+            deliveryButton.topAnchor.constraint(equalTo: venueAddressLabel.bottomAnchor, constant: 5)
         ])
     }
 }

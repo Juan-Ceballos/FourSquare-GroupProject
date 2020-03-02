@@ -20,6 +20,8 @@ class SearchResultsCell: UICollectionViewCell {
         image.backgroundColor = .systemBackground
         image.contentMode = .scaleToFill
         image.layer.cornerRadius = 20
+        
+        image.layer.masksToBounds = true 
         return image
     }()
     

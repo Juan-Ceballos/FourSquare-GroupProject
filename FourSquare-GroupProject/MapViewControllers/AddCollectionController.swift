@@ -55,13 +55,15 @@ class AddCollectionController: UIViewController {
     private func configureNavBar()  {
         self.title = "Add to or Create Collection"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(xButtonPressed))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .plain, target: self, action: #selector(createButtonPressed))
+        
+        
+        addCollectionView.createButton.addTarget(self, action: #selector(createButtonPressed), for: .touchUpInside)
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .plain, target: self, action: #selector(createButtonPressed))
     }
     
     @objc private func xButtonPressed()   {
         self.navigationController?.popViewController(animated: true)
     }
-    
     
     @objc private func createButtonPressed()  {
         // guard
