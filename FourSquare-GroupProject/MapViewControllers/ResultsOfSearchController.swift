@@ -14,13 +14,8 @@ class ResultsOfSearchController: UIViewController {
     let dataPersistence: DataPersistence<AlbumCollection>
 
     private let searchResultView = SearchResultsView()
-    private var searchResults = [Venue]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.searchResultView.collectionView.reloadData()
-            }
-        }
-    }
+    private var searchResults = [Venue]()
+
     
     init(_ dataPersistence:DataPersistence<AlbumCollection>, _ venues: [Venue]) {
         self.dataPersistence = dataPersistence
@@ -38,11 +33,23 @@ class ResultsOfSearchController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadEmptyView()
         view.backgroundColor = .systemTeal
         navigationItem.title = "Search Results"
         searchResultView.collectionView.register(SearchResultsCell.self, forCellWithReuseIdentifier: "searchResultCell")
         searchResultView.collectionView.dataSource = self
         searchResultView.collectionView.delegate = self
+    }
+    
+    private func loadEmptyView() {
+        if self.searchResults.isEmpty {
+            self.searchResultView.collectionView.backgroundView = EmptyView(title: "Oops!", message: "You did not search yet!\n Go back to the Map and try again!")
+            self.searchResultView.collectionView.backgroundView?.backgroundColor = .systemPurple
+            
+        } else {
+            self.searchResultView.collectionView.backgroundView = nil
+        }
+        
     }
     
 
@@ -57,7 +64,7 @@ extension ResultsOfSearchController: UICollectionViewDataSource {
             fatalError("could not downcast to SearchResultsCell")
         }
         let venue = searchResults[indexPath.row]
-        cell.backgroundColor = .systemPink
+        cell.backgroundColor = .systemBackground
         cell.configureCell(for: venue)
         return cell
     }
@@ -66,8 +73,8 @@ extension ResultsOfSearchController: UICollectionViewDataSource {
 extension ResultsOfSearchController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let maxSize: CGSize = UIScreen.main.bounds.size
-        let itemWidth: CGFloat = maxSize.width * 0.8
-        let itemHeight: CGFloat = maxSize.height * 0.20
+        let itemWidth: CGFloat = maxSize.width * 0.9
+        let itemHeight: CGFloat = maxSize.height * 0.15
         return CGSize(width: itemWidth, height: itemHeight)
     }
     
