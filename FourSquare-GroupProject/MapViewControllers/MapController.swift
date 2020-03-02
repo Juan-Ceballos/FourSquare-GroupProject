@@ -62,6 +62,8 @@ class MapController: UIViewController {
       //  userTrackingButton.mapView = instanceOfMapView.avenueMapView
            // what does this line mean
         
+        mapView.showsUserLocation = true
+
            
         // MARK: how to dismiss keyboard when user touchs screen
     
@@ -142,6 +144,12 @@ extension MapController: UICollectionViewDataSource{
         cell.configureCell(for: venue)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+        
     }
     
     
