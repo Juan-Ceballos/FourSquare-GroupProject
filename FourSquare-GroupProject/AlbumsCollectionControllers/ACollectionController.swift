@@ -92,3 +92,11 @@ extension ACollectionController : UITableViewDataSource {
   
   
 }
+
+extension ACollectionController : UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let venue = savedVenues[indexPath.row]
+    let detailVC = RestaurantsDetailController(dataPersistence, venue)
+    navigationController?.pushViewController(detailVC, animated: true)
+  }
+}
