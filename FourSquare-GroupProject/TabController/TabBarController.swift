@@ -12,18 +12,19 @@ import DataPersistence
 class TabBarController: UITabBarController  {
     
 
-    private var tabBarPersistance =  DataPersistence<AlbumCollection>(filename:"venue.plist")
+    //private var tabBarPersistance =  DataPersistence<AlbumCollection>(filename:"venue.plist")
+    private var tabBarPersistence = DataPersistence<AlbumCollection>(filename: "collections.plist")
     private var venues = [Venue]()
 
     lazy var mapController: MapController =   {
-        let viewController = MapController(tabBarPersistance)
+        let viewController = MapController(tabBarPersistence)
         viewController.tabBarItem = UITabBarItem(title: "search", image: UIImage(systemName: "magnifyingglass"), tag: 0)
         return viewController
         
     }()
     
     lazy var collectionController: AlbumsCollectionsController =   {
-        let viewController = AlbumsCollectionsController(tabBarPersistance)
+        let viewController = AlbumsCollectionsController(tabBarPersistence)
         viewController.tabBarItem = UITabBarItem(title: "collection", image: UIImage(systemName: "folder.badge.plus"), tag: 1)
         return viewController
     }()
@@ -31,6 +32,6 @@ class TabBarController: UITabBarController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewControllers = [UINavigationController(rootViewController:mapController), UINavigationController(rootViewController: collectionController)]
+        viewControllers = [UINavigationController(rootViewController: mapController), UINavigationController(rootViewController: collectionController)]
     }
 }

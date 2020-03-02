@@ -129,30 +129,5 @@ class SearchResultsCell: UICollectionViewCell {
         
     }
     
-    public func configureCellEmpty(for newCollection: AlbumCollection) {
-//       currentVenue = venue
-       venueNameLabel.text =  newCollection.title
-//       venueCategoryLabel.text = venue.categories[0]?.shortName
-    
-//       PhotoAPIClient.photoURL(venue: venue) { [weak self] (result) in
-//           switch result {
-//           case .failure:
-//               DispatchQueue.main.async {
-//                   self?.venueImage.image = UIImage(named: "exclamationmark - octagon")
-//               }
-//           case .success(let image):
-//
-//                   self?.venueImage.getImage(with: image, completion: { (result) in
-//                       switch result {
-//                       case .failure:
-//                           print("fail")
-//                       case .success(let image):
-//                           DispatchQueue.main.async {
-//                               self?.venueImage.image = image
-//                           }
-//                       }
-//                   })
-               
-           }
 }
 
