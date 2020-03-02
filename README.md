@@ -3,6 +3,9 @@ Allows users to search for food venues based on location, and what they're cravi
 
 ## Collaborators
 [Shaniya Suwagboe](https://github.com/suwagboe)
+
 [Luba Kaper](https://github.com/LubaKaper)
+
 [Eric Davenport](https://github.com/EricDavenport)
+
 [Juan Ceballos](https://github.com/Juan-Ceballos)
