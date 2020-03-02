@@ -1,6 +1,20 @@
 # FourSquare-GroupProject
 Allows users to search for food venues based on location, and what they're craving. Users' preferred venues may be added to a personal collection.
 
+## Features
+
+* Search for food venues based on location
+* Get Info on venue such as directions, venue photo
+* Delivery if available directly from venue page
+* Create personal collection of favorite venues, and add to existing collection
+
+## Built With
+
+* Xcode 11.4
+* Swift 5.2
+* Safari Services
+* MapKit
+
 ## Collaborators
 [Shaniya Suwagboe](https://github.com/suwagboe)
 
