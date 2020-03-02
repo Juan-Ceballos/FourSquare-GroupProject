@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0FD13B240C17AA0066C07C /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FD13A240C17AA0066C07C /* CollectionCell.swift */; };
 		3E90A2702407061F0082D5C7 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E90A26F2407061F0082D5C7 /* SearchResultCell.swift */; };
 		3EA0DEA62401E41300ACF1F8 /* CoreLocationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA0DEA52401E41300ACF1F8 /* CoreLocationSession.swift */; };
 		3EA4B2B5240096D9003C2EC4 /* RestaurantsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA4B2B4240096D9003C2EC4 /* RestaurantsDetailView.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E0FD13A240C17AA0066C07C /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		3E90A26F2407061F0082D5C7 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		3EA0DEA52401E41300ACF1F8 /* CoreLocationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationSession.swift; sourceTree = "<group>"; };
 		3EA4B2B4240096D9003C2EC4 /* RestaurantsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsDetailView.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				3E90A26F2407061F0082D5C7 /* SearchResultCell.swift */,
 				58202DAF2408421000054A9B /* ACollectionTableCell.swift */,
 				550D4FE4240896C0007C6435 /* mapCell.swift */,
+				3E0FD13A240C17AA0066C07C /* CollectionCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				3EA4B2B7240096EC003C2EC4 /* AddCollectionView.swift in Sources */,
 				3EE2A253240075840064828A /* AddCollectionController.swift in Sources */,
 				588890A22409CB83007CC901 /* EmptyView.swift in Sources */,
+				3E0FD13B240C17AA0066C07C /* CollectionCell.swift in Sources */,
 				3EA4B2C524009B77003C2EC4 /* FourSquareAPIClient.swift in Sources */,
 				3EDE29FC24046D3D00F6B888 /* Venue.swift in Sources */,
 				3EE2A25A2400795C0064828A /* AlbumsCollectionsController.swift in Sources */,

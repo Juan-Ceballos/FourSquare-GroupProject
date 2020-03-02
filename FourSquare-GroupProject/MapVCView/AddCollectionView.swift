@@ -40,8 +40,6 @@ class AddCollectionView: UIView {
         setupCreateButtonConstraint()
     }
     
-    
-    
     private func setupNamingTextFieldConstraints()  {
         addSubview(namingTextField)
         
@@ -56,7 +54,6 @@ class AddCollectionView: UIView {
         ])
     }
     
-    
     private func setupCreateButtonConstraint()  {
         addSubview(createButton)
         createButton.translatesAutoresizingMaskIntoConstraints = false
@@ -67,4 +64,5 @@ class AddCollectionView: UIView {
             
         ])
     }
+    
 }
