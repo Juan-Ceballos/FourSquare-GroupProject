@@ -62,7 +62,7 @@ class MapController: UIViewController {
       //  userTrackingButton.mapView = instanceOfMapView.avenueMapView
            // what does this line mean
         
-        mapView.showsUserLocation = true
+//        mapView.showsUserLocation = true
 
            
         // MARK: how to dismiss keyboard when user touchs screen

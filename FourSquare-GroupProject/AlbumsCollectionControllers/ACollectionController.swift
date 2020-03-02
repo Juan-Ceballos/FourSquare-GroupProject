@@ -17,9 +17,13 @@ class ACollectionController: UIViewController {
   
   private var savedVenues = [Venue]() {
     didSet {
-      self.aCollectionView.tableView.reloadData()
-    }
+//      DispatchQueue.main.async {
+              self.aCollectionView.tableView.reloadData()
+      }
+//    }
   }
+  
+
   
   init(_ dataPersistence: DataPersistence<AlbumCollection>, venue: [Venue]) {
     self.dataPersistence = dataPersistence
@@ -43,6 +47,7 @@ class ACollectionController: UIViewController {
     aCollectionView.tableView.dataSource = self
     aCollectionView.tableView.register(ACollectionTableCell.self, forCellReuseIdentifier: "aCollectionCell")
     configureRefreshController()
+    print(savedVenues)
   }
   
   private func configureRefreshController() {

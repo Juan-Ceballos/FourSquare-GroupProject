@@ -94,13 +94,16 @@ class ACollectionTableCell: UITableViewCell {
             switch result {
             case .failure(let appError):
               print("Error: \(appError)")
+              self?.titleLabel.text = venue.name
+              self?.addressLabel.text = venue.location.address
+
             case .success(let image):
-              self?.titleLabel.text = "Skunk"
-              self?.addressLabel.text = "Trash"
               print("complete")
               DispatchQueue.main.async {
                 self?.imageView?.image = image
-                
+                self?.titleLabel.text = venue.name
+                self?.addressLabel.text = venue.location.address
+
               }
             }
           })

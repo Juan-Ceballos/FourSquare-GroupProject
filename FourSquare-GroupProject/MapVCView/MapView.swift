@@ -20,11 +20,11 @@ class MapView: UIView {
     
     private var venues = [Venue]()
     
-    private lazy var panGesture: UIGestureRecognizer = {
-        let gesture = UITapGestureRecognizer()
-        gesture.addTarget(self, action: #selector(didPanGesture(_:)))
-        return gesture
-    }()
+//    private lazy var panGesture: UIGestureRecognizer = {
+//        let gesture = UITapGestureRecognizer()
+//        gesture.addTarget(self, action: #selector(didPanGesture(_:)))
+//        return gesture
+//    }()
     
     public lazy var resultsButton: UIButton = {
         let button = UIButton()
@@ -100,19 +100,19 @@ class MapView: UIView {
         configureButtonSetup()
         // registers what is being done... because the interacton of the gesture should be recognized when the map is moved so it can populate properly.
         actualMapView.isUserInteractionEnabled = true
-        addGestureRecognizer(panGesture)
+       // addGestureRecognizer(panGesture)
     }
     
-    @objc func didPanGesture(_ gesture: UILongPressGestureRecognizer) {
-        print("pan gesture is RECOGNIZED")
-        
-        // want the annotations to appear based on whatever region it displayed
-        if gesture.state == .began || gesture.state == .changed {
-            print("we panning bitch")
-            return
-        }
-       //reloadTheAnnotations()
-    }
+//    @objc func didPanGesture(_ gesture: UILongPressGestureRecognizer) {
+//        print("pan gesture is RECOGNIZED")
+//        
+//        // want the annotations to appear based on whatever region it displayed
+//        if gesture.state == .began || gesture.state == .changed {
+//            print("we panning bitch")
+//            return
+//        }
+//       //reloadTheAnnotations()
+//    }
     
     
 //    private func reloadTheAnnotations() {
@@ -157,7 +157,7 @@ class MapView: UIView {
         
         NSLayoutConstraint.activate([
           //  foodCollectionView.topAnchor.constraint(equalTo: searchTheArea.bottomAnchor, constant: 550)
-            foodCollectionView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.10) ,
+            foodCollectionView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05) ,
             foodCollectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
             foodCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             foodCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)

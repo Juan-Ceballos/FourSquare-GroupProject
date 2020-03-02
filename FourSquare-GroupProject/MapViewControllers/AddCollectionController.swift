@@ -48,6 +48,7 @@ class AddCollectionController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+      print(venue)
         configureNavBar()
         addCollectionView.namingTextField.delegate = self
     }
@@ -69,12 +70,15 @@ class AddCollectionController: UIViewController {
         print(addCollectionView.namingTextField.text ?? "Not working yet")
         
         let title = addCollectionView.namingTextField.text ?? "Not working yet"
-        
+      // TODO: guard against empty venue
+      emptyVenue.append(venue)
         collection = AlbumCollection(title: title, arrVenues: emptyVenue, image: nil)
         
         delegate?.addGroup(group: collection!)
         print(collection!.title)
         print(collection!.title)
+      let title2 = addCollectionView.namingTextField.text
+      collectionMade(title: title2 ?? "Fake collection", venue: venue)
         createCollection(newCollection: collection!)
         self.navigationController?.popViewController(animated: true)
     }
@@ -89,6 +93,18 @@ class AddCollectionController: UIViewController {
             print("fail")
         }
     }
+  
+  private func collectionMade(title: String, venue: Venue) {
+    var array = [Venue]()
+    array.append(venue)
+    let collection = AlbumCollection(title: title, arrVenues: array, image: nil)
+    do {
+      try dataPersistence.createItem(collection)
+      print("venue saved")
+    } catch {
+      print("failed to saaved venue with collection")
+    }
+  }
     
 }
 

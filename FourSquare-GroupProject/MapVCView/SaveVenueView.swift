@@ -10,7 +10,7 @@ import UIKit
 
 protocol ANewCollectionDelegate {
     func segueToAddNewCollectionController()
-    //func checkTheMadeCollections()
+    func checkTheMadeCollections()
 }
 
 class SaveVenueView: UIView {
@@ -51,7 +51,10 @@ class SaveVenueView: UIView {
 
     }
     
-   // @objc func
+  @objc func someWhereElse() {
+    print("greenbutton pressed")
+    delegate?.checkTheMadeCollections()
+  }
     
     
     public lazy var greenButton: UIButton = {
@@ -74,6 +77,7 @@ class SaveVenueView: UIView {
         greenButton.titleLabel?.text = "Here are the older collections"
         greenButton.titleLabel?.textColor = .black
         greenButton.backgroundColor = .green
+      greenButton.addTarget(self, action: #selector(someWhereElse), for: .touchUpInside)
         return greenButton
         
     }()

@@ -69,5 +69,14 @@ extension SaveVenueViewController: ANewCollectionDelegate {
         
     }
     
+  func checkTheMadeCollections() {
+   let aVenue = savedVenue
+    let instance = CollectionListViewController(dataPersistence, venue: aVenue)
+    present(instance, animated: true, completion: nil)
+
+    
+    
+    
+  }
     
 }

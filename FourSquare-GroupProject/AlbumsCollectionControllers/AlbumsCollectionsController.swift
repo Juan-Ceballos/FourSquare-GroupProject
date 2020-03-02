@@ -24,6 +24,8 @@ class AlbumsCollectionsController: UIViewController {
     }
 
     let collectionView = CollectionView()
+  
+  private var refreshController : UIRefreshControl!
     
     var collections = [AlbumCollection](){
         didSet{
@@ -51,8 +53,22 @@ class AlbumsCollectionsController: UIViewController {
         //secondDataPer.delegate = self
         configureNavBar()
         loadCollections()
+//      configureRefreshController()
     }
-    
+
+  private func configureRefreshController() {
+    refreshController = UIRefreshControl()
+    collectionView.collections.refreshControl = refreshController
+    refreshController.addTarget(self, action: #selector(reloadCollectionView), for: .valueChanged)
+  }
+  
+  @objc private func reloadCollectionView() {
+    DispatchQueue.main.async {
+      self.collectionView.collections.reloadData()
+      self.refreshController.endRefreshing()
+    }
+  }
+  
     private func loadCollections() {
         do {
             //collections = try secondDataPer.loadItems()

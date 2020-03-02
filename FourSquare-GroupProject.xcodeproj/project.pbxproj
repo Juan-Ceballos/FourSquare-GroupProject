@@ -36,6 +36,8 @@
 		552B32D324047188007621AB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B32D224047188007621AB /* Config.swift */; };
 		58202DB02408421000054A9B /* ACollectionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58202DAF2408421000054A9B /* ACollectionTableCell.swift */; };
 		588890A22409CB83007CC901 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588890A12409CB83007CC901 /* EmptyView.swift */; };
+		58C96292240D9E1B006377EC /* CollectionSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C96291240D9E1B006377EC /* CollectionSelectionView.swift */; };
+		58C96294240D9F4B006377EC /* CollectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C96293240D9F4B006377EC /* CollectionListViewController.swift */; };
 		8D4F3EC32409B18E002A347F /* SaveVenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F3EC22409B18E002A347F /* SaveVenueViewController.swift */; };
 		8D4F3EC52409B1C6002A347F /* SaveVenueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F3EC42409B1C6002A347F /* SaveVenueView.swift */; };
 		8DCC8EDF24087DE500222C0A /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8DCC8EDE24087DE500222C0A /* ImageKit */; };
@@ -85,6 +87,8 @@
 		552B32D224047188007621AB /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		58202DAF2408421000054A9B /* ACollectionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACollectionTableCell.swift; sourceTree = "<group>"; };
 		588890A12409CB83007CC901 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		58C96291240D9E1B006377EC /* CollectionSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSelectionView.swift; sourceTree = "<group>"; };
+		58C96293240D9F4B006377EC /* CollectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListViewController.swift; sourceTree = "<group>"; };
 		8D4F3EC22409B18E002A347F /* SaveVenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveVenueViewController.swift; sourceTree = "<group>"; };
 		8D4F3EC42409B1C6002A347F /* SaveVenueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveVenueView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +137,7 @@
 				3EA4B2BA24009729003C2EC4 /* CollectionView.swift */,
 				3EA4B2BC24009737003C2EC4 /* ACollectionView.swift */,
 				588890A12409CB83007CC901 /* EmptyView.swift */,
+				58C96291240D9E1B006377EC /* CollectionSelectionView.swift */,
 			);
 			path = AlbumsCollectionView;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 		3EE2A2492400748C0064828A /* MapViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				58C96293240D9F4B006377EC /* CollectionListViewController.swift */,
 				3EA4B2C824009E2C003C2EC4 /* MapController.swift */,
 				3EE2A26124007AFB0064828A /* ResultsOfSearchController.swift */,
 				3EE2A25F24007AAD0064828A /* RestaurantsDetailController.swift */,
@@ -351,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58C96294240D9F4B006377EC /* CollectionListViewController.swift in Sources */,
 				3EA4B2C924009E2C003C2EC4 /* MapController.swift in Sources */,
 				3EA4B2B5240096D9003C2EC4 /* RestaurantsDetailView.swift in Sources */,
 				3EA0DEA62401E41300ACF1F8 /* CoreLocationSession.swift in Sources */,
@@ -372,6 +379,7 @@
 				552B32D324047188007621AB /* Config.swift in Sources */,
 				3EE2A2272400744D0064828A /* AppDelegate.swift in Sources */,
 				3EA4B2B924009701003C2EC4 /* ResultsOfSearchView.swift in Sources */,
+				58C96292240D9E1B006377EC /* CollectionSelectionView.swift in Sources */,
 				3EE2A26024007AAE0064828A /* RestaurantsDetailController.swift in Sources */,
 				58202DB02408421000054A9B /* ACollectionTableCell.swift in Sources */,
 				3EE2A25C240079B00064828A /* ACollectionController.swift in Sources */,
