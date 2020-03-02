@@ -44,4 +44,5 @@ class CollectionView: UIView  {
         
         ])
     }
+    
 }

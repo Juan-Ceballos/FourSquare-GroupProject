@@ -10,11 +10,10 @@ import UIKit
 import DataPersistence
 
 protocol AddCollectionGroupDelegate: AnyObject {
-    func addGroup(collection: AlbumCollection)
+    func addGroup(group: AlbumCollection)
 }
 
 class AddCollectionController: UIViewController {
-    // instance of data persistence
     
     weak var delegate: AddCollectionGroupDelegate?
     
@@ -22,13 +21,14 @@ class AddCollectionController: UIViewController {
     
     private var dataPersistence: DataPersistence<AlbumCollection>
     
-    private var secondDataPer = DataPersistence<AlbumCollection>(filename: "collections.plist")
+    //private var secondDataPer = DataPersistence<AlbumCollection>(filename: "collections.plist")
     
     init(_ dataPersistence:DataPersistence<AlbumCollection>, venue: Venue?) {
-        self.dataPersistence = dataPersistence
         self.venue = venue
+        self.dataPersistence = dataPersistence
         super.init(nibName: nil, bundle: nil)
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coser:) has  not been implemented")
     }
@@ -56,9 +56,7 @@ class AddCollectionController: UIViewController {
         self.title = "Add to or Create Collection"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(xButtonPressed))
         
-        
         addCollectionView.createButton.addTarget(self, action: #selector(createButtonPressed), for: .touchUpInside)
-        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .plain, target: self, action: #selector(createButtonPressed))
     }
     
     @objc private func xButtonPressed()   {
@@ -72,35 +70,33 @@ class AddCollectionController: UIViewController {
         
         let title = addCollectionView.namingTextField.text ?? "Not working yet"
         
-        let newItem = AlbumCollection(title: title, arrVenues: emptyVenue, image: nil)
+        collection = AlbumCollection(title: title, arrVenues: emptyVenue, image: nil)
         
-        delegate?.addGroup(collection: newItem)
-        print(newItem.title)
-        print(newItem.title)
+        delegate?.addGroup(group: collection!)
+        print(collection!.title)
+        print(collection!.title)
+        createCollection(newCollection: collection!)
         self.navigationController?.popViewController(animated: true)
-        createCollections(collection: newItem)
     }
     
-    private func createCollections(collection: AlbumCollection)    {
+    private func createCollection(newCollection: AlbumCollection)    {
         do  {
-            try secondDataPer.createItem(collection)
+            //try secondDataPer.createItem(newCollection)
+            try dataPersistence.createItem(newCollection)
             print("success")
         }
         catch   {
-            
             print("fail")
         }
     }
-    
     
 }
 
 extension AddCollectionController: UITextFieldDelegate  {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // notify if user if empty textfield
-        
         textField.resignFirstResponder()
         return true
     }
+    
 }
 
