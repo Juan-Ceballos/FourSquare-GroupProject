@@ -55,7 +55,7 @@ extension SaveVenueViewController: ANewCollectionDelegate {
        // let newAlbum = AlbumCollection(title: "", arrVenues: [aVenue], image: Photos?)
                 
                 let instance = AddCollectionController(dataPersistence, venue: aVenue)
-                
+      
               //  present(instance,animated: true)
                // push(instance, animated: true)
         
@@ -66,8 +66,6 @@ extension SaveVenueViewController: ANewCollectionDelegate {
         present(instance, animated: true, completion: nil)
         
       //  navigationController?.present(instance, animated: true, completion: nil)
-        
-        
         
     }
     

@@ -119,7 +119,7 @@ class MapController: UIViewController {
             annotation.coordinate = coordinates
             annotationsInSideOfFunction.append(annotation)
             
-            let region = MKCoordinateRegion(center: coordinates, latitudinalMeters: 3000, longitudinalMeters: 3000)
+            let region = MKCoordinateRegion(center: coordinates, latitudinalMeters: 1500, longitudinalMeters: 1500)
             self.instanceOfMapView.actualMapView.setRegion(region, animated: true)
         }
         isShowingAnnoations = true
@@ -146,11 +146,7 @@ extension MapController: UICollectionViewDataSource{
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        
-        
-    }
+ 
     
     
 }
@@ -167,6 +163,23 @@ extension MapController: UICollectionViewDelegateFlowLayout{
        }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//         print("pressed")
+//         let selected = allVenues[indexPath.row]
+//
+//         let detailVC = RestaurantsDetailController(dp, selected)
+//
+//         navigationController?.pushViewController(detailVC, animated: true)
+//     }
+  
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+         let selected = allVenues[indexPath.row]
+    
+               let detailVC = RestaurantsDetailController(dp, selected)
+        
+            navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 

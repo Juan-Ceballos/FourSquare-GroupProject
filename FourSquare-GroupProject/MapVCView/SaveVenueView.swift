@@ -10,6 +10,7 @@ import UIKit
 
 protocol ANewCollectionDelegate {
     func segueToAddNewCollectionController()
+    //func checkTheMadeCollections()
 }
 
 class SaveVenueView: UIView {
@@ -49,6 +50,8 @@ class SaveVenueView: UIView {
                 delegate?.segueToAddNewCollectionController()
 
     }
+    
+   // @objc func
     
     
     public lazy var greenButton: UIButton = {
