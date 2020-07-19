@@ -1,6 +1,7 @@
 # FourSquare-GroupProject
 Allows users to search for food venues based on location, and what they're craving. Users' preferred venues may be added to a personal collection.
-![AppVeyor](https://img.shields.io/badge/build-passing-brightgreen)
+
+![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen) ![AppVeyor](https://img.shields.io/badge/build-passing-brightgreen)
 
 ## Features
 
