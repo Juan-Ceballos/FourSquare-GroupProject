@@ -3,6 +3,10 @@ Allows users to search for food venues based on location, and what they're cravi
 
 ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen) ![AppVeyor](https://img.shields.io/badge/build-passing-brightgreen)
 
+## Installation
+
+* placeholder
+
 ## Features
 
 * Search for food venues based on location
