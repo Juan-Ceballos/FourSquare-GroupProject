@@ -1,6 +1,8 @@
 # FourSquare-GroupProject
 Allows users to search for food venues based on location, and what they're craving. Users' preferred venues may be added to a personal collection.
 
+![Dependencies](https://img.shields.io/librariesio/github.com/Juan-Ceballos/FourSquare-GroupProject?style=plastic)
+
 ## Features
 
 * Search for food venues based on location
