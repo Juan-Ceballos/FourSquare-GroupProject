@@ -5,7 +5,7 @@ Allows users to search for food venues based on location, and what they're cravi
 
 ## Installation
 
-* placeholder
+### Clone 
 
 ## Features
 
