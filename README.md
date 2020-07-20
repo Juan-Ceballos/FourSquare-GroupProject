@@ -21,7 +21,8 @@ Allows users to search for food venues based on location, and what they're cravi
 struct ApiKey {
   static let clientID = "\*Your Foursquare Client Id\*"
   static let clientSecret = "\*Your Foursquare Client Secret\*"
-}```
+}
+```
 
 ## Features
 
