@@ -5,7 +5,23 @@ Allows users to search for food venues based on location, and what they're cravi
 
 ## Installation
 
-### Clone 
+### Prerequisites
+
+* A developer account from [Foursquare](https://foursquare.com/) for an API key composed of a Client Id and Client Secret
+
+### Clone
+
+* Clone this repo to your local machine using `https://github.com/Juan-Ceballos/FourSquare-GroupProject.git`
+
+### Setup
+
+* Add a Swift file named Config to project directory.
+* in file add following code
+```swift
+struct ApiKey {
+  static let clientID = "\*Your Foursquare Client Id\*"
+  static let clientSecret = "\*Your Foursquare Client Secret\*"
+}```
 
 ## Features
 
