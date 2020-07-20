@@ -19,8 +19,8 @@ Allows users to search for food venues based on location, and what they're cravi
 * in file add following code
 ```swift
 struct ApiKey {
-  static let clientID = "\*Your Foursquare Client Id\*"
-  static let clientSecret = "\*Your Foursquare Client Secret\*"
+  static let clientID = "*Your Foursquare Client Id*"
+  static let clientSecret = "*Your Foursquare Client Secret*"
 }
 ```
 
